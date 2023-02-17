@@ -123,7 +123,8 @@ function XPtime(date) {
     
     var y = Math.floor(diff / 31556952000);
     var m = Math.floor(diff / 2592000000) % 12;
-    var aux = y;
+    var yearCount = y;
+    var monthCount = m;
     
     if (y > 1) {
         y += ' years ';  
@@ -133,12 +134,14 @@ function XPtime(date) {
 
     if (m > 1) {
         m += ' months ';  
-    } else {
-        m += ' months ';  
+    } else if (m == 1) {
+        m += ' month ';  
     }
 
-    if (aux > 0) {
+    if (yearCount > 0 && monthCount > 0) {
         return(y + m);  
+    } else if (yearCount > 0 && monthCount == 0) {
+        return(y);
     } else {
         return(m);
     }
