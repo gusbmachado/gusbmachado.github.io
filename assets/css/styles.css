@@ -798,6 +798,40 @@ img {
 }
 
 /* Swiper class */
+
+/* ============= Resume / Docs styles ============= */
+.resume__card {
+    background-color: var(--container-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: left;
+}
+
+.resume__card .work__img {
+    height: 160px;
+    object-fit: cover;
+    border-radius: .5rem;
+    background: var(--image-color);
+}
+
+.resume__controls select {
+    background: var(--container-color);
+    color: var(--title-color);
+    padding: .4rem .6rem;
+    border-radius: .5rem;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* reuse services modal styling (already present) to display PDF preview */
+.services__modal .services__modal-content {
+    max-width: 1024px;
+    width: 95%;
+}
+
+@media screen and (max-width: 520px) {
+    .resume__card .work__img { height: 120px; }
+}
+
 .swiper-pagination-bullet {
     background-color: var(--text-color-light);
 }

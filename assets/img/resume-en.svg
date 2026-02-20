@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="560" viewBox="0 0 800 560">
+  <rect width="100%" height="100%" fill="#f3f4f6"/>
+  <text x="40" y="80" font-size="28" fill="#111">Gustavo B Machado — Resume (English)</text>
+  <text x="40" y="120" font-size="16" fill="#333">This is a preview image. Replace with a real image of your resume.</text>
+  <rect x="40" y="140" width="720" height="12" fill="#e5e7eb" />
+  <g fill="#111" font-size="14">
+    <text x="40" y="190">• Web Developer</text>
+    <text x="40" y="220">• React, TypeScript, Node.js</text>
+    <text x="40" y="250">• Linux, Docker, Cloud</text>
+  </g>
+</svg>

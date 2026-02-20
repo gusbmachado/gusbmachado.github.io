@@ -131,6 +131,80 @@ function XPtime(date) {
         y += ' year ';  
     }
 
+    /*=============== RESUME / DOCS - language detection, preview, downloads ===============*/
+    function detectPreferredLang() {
+        try {
+            const nav = navigator.language || navigator.userLanguage || 'en';
+            if (nav.toLowerCase().startsWith('pt')) return 'pt';
+            return 'en';
+        } catch (e) {
+            return 'en';
+        }
+    }
+
+    function setResumeLanguage(lang) {
+        const cards = document.querySelectorAll('.resume__card');
+        cards.forEach(card => {
+            const cardLang = card.getAttribute('data-lang');
+            if (lang === 'auto') {
+                // show all but highlight preferred
+                card.style.display = '';
+            } else if (cardLang === 'all') {
+                card.style.display = '';
+            } else {
+                card.style.display = (cardLang === lang) ? '' : 'none';
+            }
+        });
+    }
+
+    function openResumePreview(pdfPath) {
+        const modal = document.getElementById('resumeModal');
+        const iframe = document.getElementById('resumePreview');
+        iframe.src = pdfPath;
+        modal.classList.add('active-modal');
+    }
+
+    function closeResumePreview() {
+        const modal = document.getElementById('resumeModal');
+        const iframe = document.getElementById('resumePreview');
+        iframe.src = '';
+        modal.classList.remove('active-modal');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const selector = document.getElementById('resumeLang');
+        if (selector) {
+            // initial selection: try saved theme/lang then detect
+            const saved = localStorage.getItem('resumeLang') || 'auto';
+            selector.value = saved;
+            const langToUse = (saved === 'auto') ? detectPreferredLang() : saved;
+            setResumeLanguage(saved === 'auto' ? langToUse : saved);
+
+            selector.addEventListener('change', () => {
+                const val = selector.value;
+                localStorage.setItem('resumeLang', val);
+                const toUse = (val === 'auto') ? detectPreferredLang() : val;
+                setResumeLanguage(val === 'auto' ? toUse : val);
+            });
+        }
+
+        // Preview buttons
+        document.querySelectorAll('.resume-preview').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const pdf = btn.getAttribute('data-pdf');
+                if (pdf) openResumePreview(pdf);
+            });
+        });
+
+        const closeBtn = document.getElementById('resumeModalClose');
+        if (closeBtn) closeBtn.addEventListener('click', closeResumePreview);
+        // close by clicking backdrop
+        const modal = document.getElementById('resumeModal');
+        if (modal) modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeResumePreview();
+        });
+    });
+
     if (m > 1) {
         m += ' months ';  
     } else {
