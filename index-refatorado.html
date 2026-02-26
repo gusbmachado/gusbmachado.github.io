@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Barcelos Machado | Mobile & Frontend Engineer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Engenheiro de Software especializado em Flutter, React e TypeScript. Expertise em IoT, Streaming de Vídeo e Arquiteturas Offline-First.">
+    <meta name="keywords" content="Flutter Developer, React Developer, TypeScript, Mobile Development, Frontend Engineer, IoT">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gustavo Barcelos Machado | Mobile & Frontend Engineer">
+    <meta property="og:description" content="Engenheiro de Software com 5 anos de experiência em Flutter, React e IoT">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/img/logo.png" type="image/png">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* Google Fonts - Distinctive Typography */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+        /* CSS Variables - Modern System */
+        :root {
+            /* Colors - Professional Dark Theme */
+            --primary: #3B82F6;
+            --primary-hover: #2563EB;
+            --accent: #10B981;
+            --accent-alt: #F59E0B;
+            
+            --bg-primary: #0A0E17;
+            --bg-secondary: #151922;
+            --bg-tertiary: #1E2530;
+            
+            --text-primary: #F9FAFB;
+            --text-secondary: #D1D5DB;
+            --text-tertiary: #9CA3AF;
+            
+            --border: #2A3342;
+            --border-hover: #3B4556;
+            
+            /* Typography - Fluid Sizing */
+            --font-mono: 'Space Mono', monospace;
+            --font-sans: 'Inter', sans-serif;
+            
+            --fs-hero: clamp(2.5rem, 6vw, 4rem);
+            --fs-h1: clamp(2rem, 4vw, 3rem);
+            --fs-h2: clamp(1.5rem, 3vw, 2rem);
+            --fs-h3: clamp(1.125rem, 2vw, 1.5rem);
+            --fs-body: clamp(0.9375rem, 1.5vw, 1.0625rem);
+            --fs-small: clamp(0.8125rem, 1vw, 0.9375rem);
+            
+            /* Spacing */
+            --header-height: 4rem;
+            --section-gap: clamp(4rem, 10vw, 8rem);
+            
+            /* Shadows & Effects */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.3);
+            --shadow-glow: 0 0 20px rgb(59 130 246 / 0.3);
+            
+            /* Transitions */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .light-mode {
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F9FAFB;
+            --bg-tertiary: #F3F4F6;
+            
+            --text-primary: #111827;
+            --text-secondary: #374151;
+            --text-tertiary: #6B7280;
+            
+            --border: #E5E7EB;
+            --border-hover: #D1D5DB;
+            
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-height);
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: var(--fs-body);
+            line-height: 1.7;
+            color: var(--text-secondary);
+            background-color: var(--bg-primary);
+            transition: background-color var(--transition-slow), color var(--transition-slow);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-primary);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: var(--section-gap) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            font-family: var(--font-mono);
+            font-size: var(--fs-small);
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: var(--fs-h1);
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            color: var(--text-tertiary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 14, 23, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all var(--transition-base);
+        }
+
+        .light-mode .header {
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--header-height);
+            padding: 0 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav__logo {
+            font-family: var(--font-mono);
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+            transition: color var(--transition-fast);
+        }
+
+        .nav__logo:hover {
+            color: var(--primary);
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav__list {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav__link {
+            font-size: var(--fs-small);
+            color: var(--text-secondary);
+            font-weight: 500;
+            position: relative;
+            transition: color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav__link i {
+            font-size: 1.25rem;
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width var(--transition-base);
+        }
+
+        .nav__link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav__link:hover::after {
+            width: 100%;
+        }
+
+        .nav__link.active-link {
+            color: var(--primary);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            background: transparent;
+            color: var(--text-primary);
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--primary);
+            transform: rotate(180deg);
+        }
+
+        /* Hero Section */
+        .home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: var(--header-height);
+        }
+
+        .home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.05;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, -30px) rotate(5deg); }
+        }
+
+        .home__container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .home__data {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .home__greeting {
+            font-family: var(--font-mono);
+            font-size: var(--fs-body);
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .home__name {
+            font-size: var(--fs-hero);
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .home__title {
+            font-size: var(--fs-h2);
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .home__description {
+            font-size: var(--fs-body);
+            color: var(--text-tertiary);
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .home__buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .home__social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .home__social-link {
+            width: 45px;
+            height: 45px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            transition: all var(--transition-base);
+        }
+
+        .home__social-link:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        /* Buttons */
+        .button {
+            padding: 0.875rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            font-size: var(--fs-small);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button--primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .button--primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .button--ghost {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .button--ghost:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about__container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about__info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .about__box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .about__box:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about__icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .about__title {
+            font-size: var(--fs-h3);
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .about__subtitle {
+            font-size: var(--fs-small);
+            color: var(--text-tertiary);
+        }
+
+        .about__description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        .skills__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skills__content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+        }
+
+        .skills__title {
+            font-size: var(--fs-h3);
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skills__title i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .skills__box {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .skill__data {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skill__data i {
+            color: var(--accent);
+            font-size: 1.125rem;
+        }
+
+        .skills__name {
+            font-size: var(--fs-body);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Work Section */
+        .work__filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .work__item {
+            padding: 0.625rem 1.5rem;
+            border-radius: 2rem;
+            border: 2px solid var(--border);
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: var(--fs-small);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .work__item:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .work__item.active-work {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .work__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .work__card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: all var(--transition-slow);
+            position: relative;
+        }
+
+        .work__card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-base);
+        }
+
+        .work__card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .work__card:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .work__img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .work__content {
+            padding: 1.5rem;
+        }
+
+        .work__title {
+            font-size: var(--fs-h3);
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .work__tech {
+            font-size: var(--fs-small);
+            color: var(--text-tertiary);
+            margin-bottom: 1rem;
+            font-family: var(--font-mono);
+        }
+
+        .work__description {
+            font-size: var(--fs-small);
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .work__button {
+            color: var(--primary);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap var(--transition-fast);
+        }
+
+        .work__button:hover {
+            gap: 0.75rem;
+        }
+
+        /* Contact Section */
+        .contact__container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact__info {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact__card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all var(--transition-base);
+        }
+
+        .contact__card:hover {
+            border-color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .contact__card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-tertiary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .contact__card-title {
+            font-size: var(--fs-small);
+            color: var(--text-tertiary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact__card-data {
+            font-size: var(--fs-body);
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer__copy {
+            color: var(--text-tertiary);
+            font-size: var(--fs-small);
+        }
+
+        /* Scroll Up Button */
+        .scrollup {
+            position: fixed;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            background: var(--primary);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .scrollup:hover {
+            transform: translateY(-4px);
+        }
+
+        .scrollup.show-scroll {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive Design */
+        @media screen and (min-width: 768px) {
+            .about__container {
+                grid-template-columns: 1fr 1.5fr;
+            }
+
+            .nav__link i {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav__list {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                border-top: 1px solid var(--border);
+                padding: 1rem 0;
+                justify-content: space-around;
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav__link span {
+                display: none;
+            }
+
+            .home__buttons {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .work__filters {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">GBM.dev</a>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class='bx bx-home-alt'></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class='bx bx-user'></i>
+                            <span>Sobre</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class='bx bx-code-alt'></i>
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#work" class="nav__link">
+                            <i class='bx bx-briefcase-alt-2'></i>
+                            <span>Projetos</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class='bx bx-message-square-detail'></i>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                    <i class='bx bx-moon'></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+        <!-- Home Section -->
+        <section class="home section" id="home">
+            <div class="home__container container">
+                <div class="home__data">
+                    <span class="home__greeting">Olá, eu sou</span>
+                    <h1 class="home__name">Gustavo Barcelos Machado</h1>
+                    <h2 class="home__title">Mobile (Flutter) & Frontend Engineer</h2>
+                    <p class="home__description">
+                        Engenheiro de Software com quase 5 anos de experiência criando interfaces de alta complexidade para IoT, Streaming de Vídeo e Hardware. 
+                        Especialista em Flutter, React/TypeScript e arquiteturas Offline-First.
+                    </p>
+
+                    <div class="home__buttons">
+                        <a href="./assets/pdf/gustavo-b-machado.pdf" download class="button button--primary">
+                            <i class='bx bxs-download'></i>
+                            Download CV
+                        </a>
+                        <a href="#contact" class="button button--ghost">
+                            Vamos conversar
+                        </a>
+                    </div>
+
+                    <div class="home__social">
+                        <a href="https://www.linkedin.com/in/gustavo-machado-40a250186" target="_blank" class="home__social-link" aria-label="LinkedIn">
+                            <i class='bx bxl-linkedin'></i>
+                        </a>
+                        <a href="https://github.com/gusbmachado" target="_blank" class="home__social-link" aria-label="GitHub">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                        <a href="mailto:gustavobmachado105@gmail.com" class="home__social-link" aria-label="Email">
+                            <i class='bx bx-envelope'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Minha Jornada</span>
+                    <h2 class="section-title">Sobre Mim</h2>
+                    <p class="section-description">
+                        Engenheiro da Computação apaixonado por criar soluções que conectam o mundo físico ao digital.
+                    </p>
+                </div>
+
+                <div class="about__container">
+                    <div class="about__info">
+                        <div class="about__box fade-in">
+                            <i class='bx bx-briefcase about__icon'></i>
+                            <h3 class="about__title">~5 Anos</h3>
+                            <span class="about__subtitle">Experiência Profissional</span>
+                        </div>
+
+                        <div class="about__box fade-in">
+                            <i class='bx bx-code-block about__icon'></i>
+                            <h3 class="about__title">15+ Projetos</h3>
+                            <span class="about__subtitle">Produtos Entregues</span>
+                        </div>
+
+                        <div class="about__box fade-in">
+                            <i class='bx bxs-graduation about__icon'></i>
+                            <h3 class="about__title">Mestrado</h3>
+                            <span class="about__subtitle">Ciência da Computação - UFU</span>
+                        </div>
+                    </div>
+
+                    <div class="about__data fade-in">
+                        <p class="about__description">
+                            Atualmente na <strong>ViaSoftware/Viacast</strong>, trabalho no desenvolvimento de produtos proprietários de hardware e software para o mercado de Broadcast e Telecomunicações.
+                            <br><br>
+                            Minha expertise está em criar aplicações mobile com <strong>Flutter</strong> que se comunicam diretamente com hardware embarcado, além de desenvolver interfaces web complexas com <strong>React/TypeScript</strong>, sempre focando em arquiteturas Offline-First e otimização de performance.
+                            <br><br>
+                            Tenho experiência com integração de dispositivos IoT, protocolos de comunicação (AT Commands, WebSocket, HTTP), streaming de vídeo (HLS) e desenvolvimento de sistemas que funcionam tanto online quanto offline.
+                        </p>
+
+                        <a href="#contact" class="button button--primary">Entre em Contato</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Tech Stack</span>
+                    <h2 class="section-title">Competências Técnicas</h2>
+                    <p class="section-description">
+                        Tecnologias e ferramentas que domino para criar soluções robustas.
+                    </p>
+                </div>
+
+                <div class="skills__container">
+                    <!-- Mobile Development -->
+                    <div class="skills__content fade-in">
+                        <h3 class="skills__title">
+                            <i class='bx bx-mobile-alt'></i>
+                            Mobile Development
+                        </h3>
+                        <div class="skills__box">
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Flutter / Dart</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Integração Nativa (Android)</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Comunicação Serial / AT Commands</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">PWA</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frontend Development -->
+                    <div class="skills__content fade-in">
+                        <h3 class="skills__title">
+                            <i class='bx bx-code-alt'></i>
+                            Frontend Development
+                        </h3>
+                        <div class="skills__box">
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">React.js / Next.js</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">TypeScript / JavaScript ES6+</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">HTML5 / CSS3 / SCSS</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Tailwind CSS / Styled-Components</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Vite / MUI</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend & Tools -->
+                    <div class="skills__content fade-in">
+                        <h3 class="skills__title">
+                            <i class='bx bx-server'></i>
+                            Backend & DevOps
+                        </h3>
+                        <div class="skills__box">
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Node.js</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Firebase (Auth, Firestore, Hosting)</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Git / GitHub</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Docker</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Linux (Shell Scripting / Admin)</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specialized Knowledge -->
+                    <div class="skills__content fade-in">
+                        <h3 class="skills__title">
+                            <i class='bx bx-chip'></i>
+                            Domínios Especializados
+                        </h3>
+                        <div class="skills__box">
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">IoT & Hardware Integration</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Streaming de Vídeo (HLS)</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Protocolos de Rede (HTTP, WebSocket)</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">Arquitetura Offline-First</h3>
+                            </div>
+                            <div class="skill__data">
+                                <i class='bx bx-badge-check'></i>
+                                <h3 class="skills__name">UI/UX Design (Figma)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section class="work section" id="work">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Portfólio</span>
+                    <h2 class="section-title">Projetos em Destaque</h2>
+                    <p class="section-description">
+                        Seleção de projetos que demonstram expertise técnica e impacto no negócio.
+                    </p>
+                </div>
+
+                <div class="work__filters">
+                    <span class="work__item active-work" data-filter="all">Todos</span>
+                    <span class="work__item" data-filter=".mobile">Mobile</span>
+                    <span class="work__item" data-filter=".web">Web</span>
+                    <span class="work__item" data-filter=".iot">IoT</span>
+                </div>
+
+                <div class="work__container">
+                    <!-- Case Controller -->
+                    <article class="work__card mix mobile iot fade-in">
+                        <img src="./assets/img/profile.png" alt="Case Controller" class="work__img">
+                        <div class="work__content">
+                            <h3 class="work__title">Case Controller</h3>
+                            <p class="work__tech">Flutter • IoT • Comandos AT</p>
+                            <p class="work__description">
+                                App móvel crítico para gestão de modems 4G/5G. Implementa comunicação via Comandos AT e portas seriais para configuração automática de APNs e testes de velocidade, eliminando configuração manual de hardware.
+                            </p>
+                            <a href="#" class="work__button">
+                                Ver detalhes <i class='bx bx-right-arrow-alt'></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- EPG Editor -->
+                    <article class="work__card mix web fade-in">
+                        <img src="./assets/img/epg.png" alt="EPG Editor" class="work__img">
+                        <div class="work__content">
+                            <h3 class="work__title">EPG Editor</h3>
+                            <p class="work__tech">React • TypeScript • Serverless • Offline-First</p>
+                            <p class="work__description">
+                                Solução SaaS para emissoras de TV (padrão Globo). Arquitetura Serverless com armazenamento local otimizado para operação 100% offline, reduzindo drasticamente custos de infraestrutura.
+                            </p>
+                            <a href="https://viacast.tv/epg/" target="_blank" class="work__button">
+                                Ver demo <i class='bx bx-right-arrow-alt'></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Sistema PM -->
+                    <article class="work__card mix mobile iot fade-in">
+                        <img src="./assets/img/profile.png" alt="Sistema PM" class="work__img">
+                        <div class="work__content">
+                            <h3 class="work__title">Sistema de Comunicação Tática via Rádio</h3>
+                            <p class="work__tech">Flutter • NanoPi • WebSocket • REST API</p>
+                            <p class="work__description">
+                                Aplicação móvel para controle de codificação em áreas remotas. Dashboard de telemetria em tempo real, módulo de gerenciamento de rede WiFi e integração com API de roteadores para configuração de dispositivos em campo.
+                            </p>
+                            <a href="#" class="work__button">
+                                Ver detalhes <i class='bx bx-right-arrow-alt'></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Modernização Web -->
+                    <article class="work__card mix web fade-in">
+                        <img src="./assets/img/profile.png" alt="Tech Refresh" class="work__img">
+                        <div class="work__content">
+                            <h3 class="work__title">Modernização de Interfaces Web</h3>
+                            <p class="work__tech">React • TypeScript • Vite • Tailwind CSS</p>
+                            <p class="work__description">
+                                Liderou refatoração completa das interfaces web dos principais equipamentos da empresa. Migração de sistemas legados PHP para arquitetura SPA moderna, melhorando performance e manutenibilidade.
+                            </p>
+                            <a href="#" class="work__button">
+                                Ver detalhes <i class='bx bx-right-arrow-alt'></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- License Manager -->
+                    <article class="work__card mix web fade-in">
+                        <img src="./assets/img/license.png" alt="License Manager" class="work__img">
+                        <div class="work__content">
+                            <h3 class="work__title">License Manager</h3>
+                            <p class="work__tech">React • TypeScript • Firebase</p>
+                            <p class="work__description">
+                                Sistema de gerenciamento de licenças com interface moderna e intuitiva. Integração com Firebase para autenticação e armazenamento em tempo real.
+                            </p>
+                            <a href="https://license-manager-ten.vercel.app/login" target="_blank" class="work__button">
+                                Ver demo <i class='bx bx-right-arrow-alt'></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- PWA Igreja -->
+                    <article class="work__card mix web fade-in">
+                        <img src="./assets/img/profile.png" alt="PWA Igreja" class="work__img">
+                        <div class="work__content">
+                            <h3 class="work__title">PWA Comunidade</h3>
+                            <p class="work__tech">React • TypeScript • Firebase • PWA</p>
+                            <p class="work__description">
+                                Progressive Web App completo com arquitetura Serverless. Experiência nativa de baixo custo e alta escalabilidade usando Firebase (Auth, Hosting, Firestore).
+                            </p>
+                            <a href="#" class="work__button">
+                                Ver detalhes <i class='bx bx-right-arrow-alt'></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Contato</span>
+                    <h2 class="section-title">Vamos Trabalhar Juntos</h2>
+                    <p class="section-description">
+                        Interessado em colaborar ou discutir oportunidades? Entre em contato!
+                    </p>
+                </div>
+
+                <div class="contact__container">
+                    <div class="contact__info">
+                        <div class="contact__card fade-in">
+                            <div class="contact__card-icon">
+                                <i class='bx bx-envelope'></i>
+                            </div>
+                            <div>
+                                <h3 class="contact__card-title">Email</h3>
+                                <a href="mailto:gustavobmachado105@gmail.com" class="contact__card-data">
+                                    gustavobmachado105@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact__card fade-in">
+                            <div class="contact__card-icon">
+                                <i class='bx bxl-whatsapp'></i>
+                            </div>
+                            <div>
+                                <h3 class="contact__card-title">WhatsApp</h3>
+                                <a href="https://wa.me/5534991958314" target="_blank" class="contact__card-data">
+                                    (34) 99195-8314
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact__card fade-in">
+                            <div class="contact__card-icon">
+                                <i class='bx bxl-linkedin'></i>
+                            </div>
+                            <div>
+                                <h3 class="contact__card-title">LinkedIn</h3>
+                                <a href="https://www.linkedin.com/in/gustavo-machado-40a250186" target="_blank" class="contact__card-data">
+                                    Gustavo Machado
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact__card fade-in">
+                            <div class="contact__card-icon">
+                                <i class='bx bx-map'></i>
+                            </div>
+                            <div>
+                                <h3 class="contact__card-title">Localização</h3>
+                                <span class="contact__card-data">Uberlândia, MG - Brasil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__copy">
+                &copy; 2025 Gustavo Barcelos Machado. Feito à mão com atenção aos detalhes.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll Up Button -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bx-up-arrow-alt'></i>
+    </a>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check saved theme or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+            body.classList.add('light-mode');
+            themeIcon.classList.remove('bx-moon');
+            themeIcon.classList.add('bx-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                themeIcon.classList.remove('bx-moon');
+                themeIcon.classList.add('bx-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.classList.remove('bx-sun');
+                themeIcon.classList.add('bx-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Active Link on Scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav__link');
+
+        function activeLink() {
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav__link[href*="${sectionId}"]`);
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => link.classList.remove('active-link'));
+                    navLink?.classList.add('active-link');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', activeLink);
+
+        // Scroll Up Button
+        const scrollUp = document.getElementById('scroll-up');
+
+        function showScrollUp() {
+            if (window.scrollY >= 350) {
+                scrollUp.classList.add('show-scroll');
+            } else {
+                scrollUp.classList.remove('show-scroll');
+            }
+        }
+
+        window.addEventListener('scroll', showScrollUp);
+
+        // Intersection Observer for Fade In Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(element => observer.observe(element));
+
+        // Work Filters (Simple Implementation)
+        const workFilters = document.querySelectorAll('.work__item');
+        const workCards = document.querySelectorAll('.work__card');
+
+        workFilters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                // Remove active class from all filters
+                workFilters.forEach(f => f.classList.remove('active-work'));
+                filter.classList.add('active-work');
+
+                const filterValue = filter.getAttribute('data-filter');
+
+                workCards.forEach(card => {
+                    if (filterValue === 'all' || card.classList.contains(filterValue.substring(1))) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
