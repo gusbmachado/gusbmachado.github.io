@@ -62,9 +62,9 @@ const portfolioData = {
       cover: "./assets/pdf/cover-pt.pdf",
     },
     salary: {
-      brl: "R$ 120/hora",
-      usd: "$30/h",
-      eur: "€28/h",
+      brl: "R$ 40/hora",
+      usd: "US$ 15/h",
+      eur: "€ 14/h",
       note: "Valores negociáveis conforme escopo e modalidade."
     },
     more: "Disponível para remoto, projetos internacionais e consultoria técnica."
@@ -131,9 +131,9 @@ const portfolioData = {
       cover: "./assets/pdf/cover-en.pdf",
     },
     salary: {
-      brl: "R$ 120/h",
-      usd: "$30/h",
-      eur: "€28/h",
+      brl: "R$ 40/h",
+      usd: "US$ 15/h",
+      eur: "€ 14/h",
       note: "Rates negotiable depending on scope and contract type."
     },
     more: "Available for remote, international projects and technical consulting."
@@ -200,9 +200,9 @@ const portfolioData = {
       cover: "./assets/pdf/cover-es.pdf",
     },
     salary: {
-      brl: "R$ 120/hora",
-      usd: "$30/h",
-      eur: "€28/h",
+      brl: "R$ 40/hora",
+      usd: "US$ 15/h",
+      eur: "€ 14/h",
       note: "Valores negociables según alcance y modalidad."
     },
     more: "Disponible para remoto, proyectos internacionales y consultoría técnica."
