@@ -46,7 +46,14 @@ export function initContact() {
 function t(key) {
   try {
     const [ns, k] = key.split('.');
-    return getData()?.i18n?.[getLang()]?.[ns]?.[k] ?? _fallback[key] ?? key;
+    const rawLang = getLang();
+    const lang =
+      rawLang === 'pt-BR'
+        ? 'pt'
+        : (rawLang && typeof rawLang === 'string' && rawLang.includes('-')
+            ? rawLang.split('-')[0]
+            : rawLang || 'pt');
+    return getData()?.i18n?.[lang]?.[ns]?.[k] ?? _fallback[key] ?? key;
   } catch {
     return _fallback[key] ?? key;
   }
