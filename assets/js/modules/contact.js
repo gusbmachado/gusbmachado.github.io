@@ -1,15 +1,10 @@
 /**
  * contact.js – Contact form submission via Formspree
- *
- * Setup (free – 50 submissions/month):
- *  1. Sign up at https://formspree.io
- *  2. Create a new form and copy its ID  (e.g. "xpwzygkb")
- *  3. Replace the value of FORMSPREE_ID below with your own ID
  */
 
 import { getData, getLang } from './i18n.js';
 
-const FORMSPREE_ID = 'YOUR_FORM_ID'; // ← replace this
+const FORMSPREE_ID = 'mbdavveb'; // ← replace this
 
 export function initContact() {
   const form = document.getElementById('contactForm');
