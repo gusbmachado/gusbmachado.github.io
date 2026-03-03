@@ -225,11 +225,14 @@ export function initProgressBars() {
 ══════════════════════════════════════════ */
 export function initWorkFilters() {
   const filters = document.querySelectorAll('.work__item');
-  const cards   = document.querySelectorAll('.work__card');
   if (!filters.length) return;
 
   filters.forEach(btn => {
     btn.addEventListener('click', () => {
+      // Re-query on every click so we always reference the current DOM nodes,
+      // even after renderProjects() has replaced .work__container innerHTML.
+      const cards = document.querySelectorAll('.work__card');
+
       filters.forEach(f => f.classList.remove('active-work'));
       btn.classList.add('active-work');
 
