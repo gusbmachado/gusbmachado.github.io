@@ -1,2642 +1,336 @@
 <!DOCTYPE html>
-<html lang="pt">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0F1419">
-    <title>Gustavo Barcelos Machado | Mobile & Frontend Engineer</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Software Engineer with 5 years of experience in Flutter, React, and TypeScript. Expertise in IoT, Video Streaming, and Offline-First Architectures.">
-    <meta name="keywords" content="Flutter Developer, React Developer, TypeScript, Mobile Development, Frontend Engineer, IoT, Uberlândia">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Gustavo Barcelos Machado | Mobile & Frontend Engineer">
-    <meta property="og:description" content="Software Engineer with 5 years of experience in Flutter, React and IoT">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="./assets/img/icon.png">
-
-    <!-- Favicon -->
-    <link rel="icon" href="./assets/img/icon.png" type="image/png">
-
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- Preconnect for fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* CSS Variables - Custom Brand Palette */
-        :root {
-            /* Brand Colors - Psychology-Driven */
-            --brand-primary: #CD7F32;      /* Bronze/Copper - Achievement, Warmth */
-            --brand-primary-dark: #A86628;  /* Darker bronze for hover */
-            --brand-primary-light: #E8B875; /* Lighter bronze for accents */
-            
-            --brand-secondary: #1A2A3A;     /* Deep Teal - Professionalism, Tech */
-            --brand-secondary-light: #2A3D50;
-            --brand-secondary-lighter: #3A5068;
-            
-            --brand-accent: #4ECDC4;        /* Teal Accent - CTA, Trust */
-            --brand-accent-hover: #3DB8AF;
-            
-            --brand-neutral: #E8DDD3;       /* Beige - Readability, Balance */
-            
-            /* Semantic Colors - Dark Theme */
-            --bg-primary: #0F1419;
-            --bg-secondary: var(--brand-secondary);
-            --bg-tertiary: var(--brand-secondary-light);
-            --bg-card: #1F2937;
-            
-            --text-primary: #F9FAFB;
-            --text-secondary: #D1D5DB;
-            --text-tertiary: #9CA3AF;
-            
-            --border: #2A3342;
-            --border-hover: var(--brand-primary);
-            
-            /* Typography */
-            --font-mono: 'Space Mono', monospace;
-            --font-sans: 'Inter', sans-serif;
-            
-            --fs-hero: clamp(2.5rem, 6vw, 4.5rem);
-            --fs-h1: clamp(2rem, 4vw, 3rem);
-            --fs-h2: clamp(1.5rem, 3vw, 2rem);
-            --fs-h3: clamp(1.125rem, 2vw, 1.5rem);
-            --fs-body: clamp(0.9375rem, 1.5vw, 1.0625rem);
-            --fs-small: clamp(0.8125rem, 1vw, 0.9375rem);
-            
-            /* Spacing */
-            --header-height: 4rem;
-            --section-gap: clamp(4rem, 10vw, 8rem);
-            
-            /* Effects */
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.15);
-            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.3);
-            --shadow-brand: 0 0 30px rgba(205, 127, 50, 0.2);
-            
-            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .light-mode {
-            --bg-primary: #FFFFFF;
-            --bg-secondary: #F9FAFB;
-            --bg-tertiary: #F3F4F6;
-            --bg-card: #FFFFFF;
-            
-            --text-primary: #111827;
-            --text-secondary: #374151;
-            --text-tertiary: #6B7280;
-            
-            --border: #E5E7EB;
-            --border-hover: var(--brand-primary);
-            
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08);
-            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.12);
-            --shadow-brand: 0 0 30px rgba(205, 127, 50, 0.15);
-        }
-
-        /* Reset & Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: var(--header-height);
-        }
-
-        body {
-            font-family: var(--font-sans);
-            font-size: var(--fs-body);
-            line-height: 1.7;
-            color: var(--text-secondary);
-            background-color: var(--bg-primary);
-            transition: background-color var(--transition-slow), color var(--transition-slow);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--text-primary);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Utility Classes */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .section {
-            padding: var(--section-gap) 0;
-            background-color: var(--bg-primary);
-        }
-
-        .section.alt {
-            background-color: var(--bg-secondary);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-subtitle {
-            font-family: var(--font-mono);
-            font-size: var(--fs-small);
-            color: var(--brand-primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .section-title {
-            font-size: var(--fs-h1);
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .section-description {
-            color: var(--text-tertiary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(15, 20, 25, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            transition: all var(--transition-base);
-        }
-
-        .light-mode .header {
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: var(--header-height);
-            padding: 0 1.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .nav__logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-family: var(--font-mono);
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--brand-primary);
-            letter-spacing: 1px;
-            transition: transform var(--transition-fast);
-        }
-
-        .nav__logo img {
-            height: 35px;
-            width: auto;
-        }
-
-        .nav__logo:hover {
-            transform: translateY(-2px);
-        }
-
-        .nav__menu {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
-
-        .nav__list {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav__link {
-            font-size: var(--fs-small);
-            color: var(--text-secondary);
-            font-weight: 500;
-            position: relative;
-            transition: color var(--transition-fast);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav__link i {
-            font-size: 1.25rem;
-        }
-
-        .nav__link::after {
-            content: '';
-            position: absolute;
-            bottom: -0.5rem;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--brand-primary);
-            transition: width var(--transition-base);
-        }
-
-        .nav__link:hover {
-            color: var(--brand-primary);
-        }
-
-        .nav__link:hover::after {
-            width: 100%;
-        }
-
-        .nav__link.active-link {
-            color: var(--brand-primary);
-        }
-
-        /* Language Selector */
-        .lang-selector {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-            border: 1px solid var(--border);
-            border-radius: 2rem;
-            padding: 0.25rem;
-            background: var(--bg-tertiary);
-        }
-
-        .lang-option {
-            padding: 0.375rem 0.875rem;
-            font-size: var(--fs-small);
-            font-weight: 600;
-            border-radius: 1.5rem;
-            cursor: pointer;
-            transition: all var(--transition-fast);
-            color: var(--text-tertiary);
-        }
-
-        .lang-option:hover {
-            color: var(--brand-primary);
-        }
-
-        .lang-option.active {
-            background: var(--brand-primary);
-            color: white;
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid var(--border);
-            background: transparent;
-            color: var(--text-primary);
-            font-size: 1.125rem;
-            cursor: pointer;
-            transition: all var(--transition-fast);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--brand-primary);
-        }
-
-        /* Hero Section */
-        .home {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding-top: var(--header-height);
-        }
-
-        .home::before {
-            content: '';
-            position: absolute;
-            top: 10%;
-            right: -5%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--brand-primary) 0%, transparent 70%);
-            opacity: 0.8;
-            animation: float 10s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-30px, -30px) rotate(8deg); }
-        }
-
-        .home__container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            align-items: center;
-            position: relative;
-        }
-
-        .home__data {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .home__greeting {
-            font-family: var(--font-mono);
-            font-size: var(--fs-body);
-            color: var(--brand-primary);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .home__name {
-            font-size: var(--fs-hero);
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            line-height: 1.1;
-        }
-
-        .home__name .highlight {
-            color: var(--brand-primary);
-        }
-
-        .home__title {
-            font-size: var(--fs-h2);
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .home__description {
-            font-size: var(--fs-body);
-            color: var(--text-tertiary);
-            max-width: 650px;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .home__buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .home__stats {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .stat-number {
-            font-size: var(--fs-h2);
-            font-weight: 700;
-            color: var(--brand-primary);
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: var(--fs-small);
-            color: var(--text-tertiary);
-            margin-top: 0.25rem;
-        }
-
-        .home__social {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .home__social-link {
-            width: 45px;
-            height: 45px;
-            border: 2px solid var(--border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            transition: all var(--transition-base);
-        }
-
-        .home__social-link:hover {
-            border-color: var(--brand-primary);
-            color: var(--brand-primary);
-            transform: translateY(-4px);
-        }
-
-        /* Buttons */
-        .button {
-            padding: 0.875rem 2rem;
-            border-radius: 0.375rem;
-            font-weight: 600;
-            font-size: var(--fs-small);
-            cursor: pointer;
-            transition: all var(--transition-base);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            overflow: hidden;
-            border: none;
-        }
-
-        .button--primary {
-            background: var(--brand-primary);
-            color: white;
-            border: 2px solid var(--brand-primary);
-        }
-
-        .button--primary:hover {
-            background: var(--brand-primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-brand);
-        }
-
-        .button--ghost {
-            background: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--border);
-        }
-
-        .button--ghost:hover {
-            border-color: var(--brand-primary);
-            color: var(--brand-primary);
-            transform: translateY(-2px);
-        }
-
-        .button--accent {
-            background: var(--brand-accent);
-            color: white;
-            border: 2px solid var(--brand-accent);
-        }
-
-        .button--accent:hover {
-            background: var(--brand-accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
-        }
-
-        /* Documents Section */
-        .documents {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .documents__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .doc-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 1.75rem;
-            transition: all var(--transition-base);
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .doc-card:hover {
-            border-color: var(--brand-primary);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .doc-card__header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .doc-card__icon {
-            width: 50px;
-            height: 50px;
-            background: var(--bg-tertiary);
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--brand-primary);
-            font-size: 1.5rem;
-        }
-
-        .doc-card__title {
-            font-size: var(--fs-h3);
-            color: var(--text-primary);
-        }
-
-        .doc-card__description {
-            font-size: var(--fs-small);
-            color: var(--text-tertiary);
-            line-height: 1.6;
-        }
-
-        .doc-card__languages {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .doc-lang-badge {
-            padding: 0.375rem 0.875rem;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border);
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-            cursor: pointer;
-            transition: all var(--transition-fast);
-        }
-
-        .doc-lang-badge:hover {
-            border-color: var(--brand-primary);
-            color: var(--brand-primary);
-        }
-
-        .doc-lang-badge i {
-            font-size: 0.875rem;
-        }
-
-        /* Stats Section */
-        .stats {
-            background: var(--bg-secondary);
-        }
-
-        .stats__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 2rem;
-            text-align: center;
-            transition: all var(--transition-base);
-        }
-
-        .stat-card:hover {
-            border-color: var(--brand-primary);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .stat-card__icon {
-            width: 60px;
-            height: 60px;
-            background: var(--brand-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.75rem;
-            margin: 0 auto 1rem;
-        }
-
-        .stat-card__value {
-            font-size: var(--fs-h1);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-card__label {
-            font-size: var(--fs-body);
-            color: var(--text-tertiary);
-        }
-
-        .stat-card__detail {
-            font-size: var(--fs-small);
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-            font-family: var(--font-mono);
-        }
-
-        /* Tech Stack with Experience */
-        .tech-stack {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .tech-category {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 2rem;
-        }
-
-        .tech-category__header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-category__icon {
-            color: var(--brand-primary);
-            font-size: 1.5rem;
-        }
-
-        .tech-category__title {
-            font-size: var(--fs-h3);
-            color: var(--text-primary);
-        }
-
-        .tech-item {
-            margin-bottom: 1.25rem;
-        }
-
-        .tech-item__header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .tech-item__name {
-            font-size: var(--fs-body);
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .tech-item__years {
-            font-size: var(--fs-small);
-            color: var(--brand-primary);
-            font-weight: 600;
-            font-family: var(--font-mono);
-        }
-
-        .tech-item__bar {
-            height: 6px;
-            background: var(--bg-tertiary);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .tech-item__progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--brand-primary), var(--brand-primary-light));
-            border-radius: 3px;
-            transition: width 1s ease-out;
-        }
-
-        .tech-item__projects {
-            font-size: 0.75rem;
-            color: var(--text-tertiary);
-            margin-top: 0.25rem;
-        }
-
-        
-        /* About Section */
-        .about__container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about__info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .about__box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all var(--transition-base);
-        }
-
-        .about__box:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .about__icon {
-            font-size: 2rem;
-            color: var(--brand-primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .about__title {
-            font-size: var(--fs-h3);
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .about__subtitle {
-            font-size: var(--fs-small);
-            color: var(--text-tertiary);
-        }
-
-        .about__description {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        /* Skills Section */
-        .skills__container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skills__content {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 2rem;
-        }
-
-        .skills__content:hover {
-            border-color: var(--border-hover);
-            box-shadow: var(--shadow-md);
-        }
-
-        .skills__title {
-            font-size: var(--fs-h3);
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .skills__title i {
-            color: var(--brand-primary);
-            font-size: 1.5rem;
-        }
-
-        .skills__box {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .skill__data {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.5rem;
-            transition: background var(--transition-fast);
-        }
-
-        .skill__data:hover {
-            background: var(--bg-tertiary);
-        }
-
-        .skill__data i {
-            color: var(--brand-accent);
-            font-size: 1.125rem;
-        }
-
-        .skills__name {
-            font-size: var(--fs-body);
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-/* Work Section */
-        .work__filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .work__item {
-            padding: 0.625rem 1.5rem;
-            border-radius: 2rem;
-            border: 2px solid var(--border);
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: var(--fs-small);
-            cursor: pointer;
-            transition: all var(--transition-base);
-        }
-
-        .work__item:hover {
-            border-color: var(--brand-primary);
-            color: var(--brand-primary);
-        }
-
-        .work__item.active-work {
-            background: var(--brand-primary);
-            color: white;
-            border-color: var(--brand-primary);
-        }
-
-        .work__container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .work__card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            overflow: hidden;
-            transition: all var(--transition-slow);
-            position: relative;
-        }
-
-        .work__card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--brand-primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform var(--transition-base);
-        }
-
-        .work__card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .work__card:hover {
-            border-color: var(--brand-primary);
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .work__img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-            background: var(--bg-tertiary);
-        }
-
-        .work__content {
-            padding: 1.5rem;
-        }
-
-        .work__title {
-            font-size: var(--fs-h3);
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .work__tech {
-            font-size: var(--fs-small);
-            color: var(--brand-primary);
-            margin-bottom: 1rem;
-            font-family: var(--font-mono);
-        }
-
-        .work__description {
-            font-size: var(--fs-small);
-            color: var(--text-secondary);
-            margin-bottom: 1.25rem;
-            line-height: 1.6;
-        }
-
-        .work__button {
-            color: var(--brand-primary);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap var(--transition-fast);
-        }
-
-        .work__button:hover {
-            gap: 0.75rem;
-        }
-
-        /* Compensation Info */
-        .compensation {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-        }
-
-        .compensation__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .compensation__card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .compensation__card-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--brand-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.75rem;
-            margin: 0 auto 1.25rem;
-        }
-
-        .compensation__card-title {
-            font-size: var(--fs-h3);
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .compensation__card-value {
-            font-size: var(--fs-h2);
-            font-weight: 700;
-            color: var(--brand-primary);
-            font-family: var(--font-mono);
-            margin-bottom: 0.5rem;
-        }
-
-        .compensation__card-note {
-            font-size: var(--fs-small);
-            color: var(--text-tertiary);
-        }
-
-        /* Contact Section */
-        .contact__container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .contact__info {
-            display: grid;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact__card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: all var(--transition-base);
-        }
-
-        .contact__card:hover {
-            border-color: var(--brand-primary);
-            transform: translateX(4px);
-        }
-
-        .contact__card-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--bg-tertiary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--brand-primary);
-            font-size: 1.5rem;
-        }
-
-        .contact__card-title {
-            font-size: var(--fs-small);
-            color: var(--text-tertiary);
-            margin-bottom: 0.25rem;
-        }
-
-        .contact__card-data {
-            font-size: var(--fs-body);
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer__copy {
-            color: var(--text-tertiary);
-            font-size: var(--fs-small);
-        }
-
-        /* Scroll Up Button */
-        .scrollup {
-            position: fixed;
-            right: 1.5rem;
-            bottom: 1.5rem;
-            background: var(--brand-primary);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--transition-base);
-            cursor: pointer;
-            z-index: 100;
-            border: none;
-        }
-
-        .scrollup:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-brand);
-        }
-
-        .scrollup.show-scroll {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Responsive Design */
-        @media screen and (min-width: 768px) {
-            .nav__link i {
-                display: none;
-            }
-        
-            .about__container {
-                grid-template-columns: 1fr 1.5fr;
-            }
-}
-
-        @media screen and (max-width: 768px) {
-            .nav__list {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: var(--bg-secondary);
-                border-top: 1px solid var(--border);
-                padding: 1rem 0;
-                justify-content: space-around;
-                box-shadow: var(--shadow-lg);
-            }
-
-            .nav__link span {
-                display: none;
-            }
-
-            .home__buttons {
-                flex-direction: column;
-            }
-
-            .button {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .lang-selector {
-                position: fixed;
-                bottom: 5rem;
-                right: 1rem;
-                z-index: 999;
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Hidden by default - shows based on language */
-        *:not(html)[lang]:not([lang="pt-BR"]) { display: none; }
-
-        html[lang="en"] [lang="en"],
-        html[lang="es"] [lang="es"],
-        html[lang="pt-BR"] [lang="pt-BR"] {
-            display: block;
-        }
-
-        html[lang="en"] [lang="en"].inline,
-        html[lang="es"] [lang="es"].inline,
-        html[lang="pt-BR"] [lang="pt-BR"].inline {
-            display: inline;
-        }
-
-        html[lang="en"] [lang="en"].flex,
-        html[lang="es"] [lang="es"].flex,
-        html[lang="pt-BR"] [lang="pt-BR"].flex {
-            display: flex;
-        }
-    
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-
-/* =========================
-   Language visibility (SPA i18n)
-   ========================= */
-/* Only show elements matching current <html lang="...">.
-   Elements without [lang] are always visible. */
-html[lang="pt-BR"] [lang]:not([lang="pt-BR"]) { display: none !important; }
-html[lang="en"] [lang]:not([lang="en"]) { display: none !important; }
-html[lang="es"] [lang]:not([lang="es"]) { display: none !important; }
-
-/* =========================
-   PDF Viewer Modal
-   ========================= */
-.pdf-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(6px);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    padding: 1rem;
-}
-.pdf-modal.is-open { display: flex; }
-.pdf-modal__panel {
-    width: min(1000px, 100%);
-    height: min(80vh, 720px);
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 0.9rem;
-    box-shadow: var(--shadow-lg);
-    overflow: hidden;
-    display: grid;
-    grid-template-rows: auto 1fr;
-}
-.pdf-modal__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    padding: 0.75rem 0.9rem;
-    border-bottom: 1px solid var(--border);
-    background: rgba(255,255,255,0.02);
-}
-.pdf-modal__title {
-    font-size: var(--fs-small);
-    color: var(--text-secondary);
-    font-family: var(--font-mono);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-.pdf-modal__actions {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
-.pdf-modal__btn {
-    border: 1px solid var(--border);
-    background: var(--bg-tertiary);
-    color: var(--text-secondary);
-    border-radius: 0.75rem;
-    padding: 0.45rem 0.7rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-.pdf-modal__btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
-.pdf-modal__btn--close:hover { border-color: var(--accent-alt); color: var(--accent-alt); }
-.pdf-modal__frame {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    background: #0b0f18;
-}
-.no-scroll { overflow: hidden; }
-
-/* =========================
-   Certificates
-   ========================= */
-
-
-/* =========================
-   Mobile floating icon nav
-   ========================= */
-.mnav {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 1rem;
-    z-index: 1500;
-    background: rgba(15, 20, 25, 0.85);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-lg);
-    border-radius: 999px;
-    padding: 0.35rem;
-    backdrop-filter: blur(10px);
-    display: none;
-    gap: 0.25rem;
-}
-.light-mode .mnav { background: rgba(255,255,255,0.85); }
-.mnav__link {
-    width: 42px;
-    height: 42px;
-    border-radius: 999px;
-    display: grid;
-    place-items: center;
-    color: var(--text-secondary);
-    transition: all var(--transition-fast);
-    border: 1px solid transparent;
-}
-.mnav__link i { font-size: 1.2rem; }
-.mnav__link:hover {
-    color: var(--text-primary);
-    border-color: var(--border-hover);
-}
-.mnav__link.active-link {
-    color: white;
-    background: var(--primary);
-    border-color: transparent;
-}
-.light-mode .mnav__link.active-link { color: white; }
-
-/* Responsive adjustments: keep header nav visible; hide bottom bar and use floating icons */
-@media screen and (max-width: 768px) {
-    .nav__list { display: none; }
-    .mnav { display: flex; }
-    /* keep room for floating nav + scrollup */
-    body { padding-bottom: 70px; }
-    .scrollup { bottom: 5.5rem; }
-}
-
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0F1419">
+  <title>Gustavo Barcelos Machado | Mobile &amp; Frontend Engineer</title>
+  <meta name="description" content="Engenheiro de Software com 5 anos de experiência em Flutter, React e TypeScript. Especialista em IoT, Streaming de Vídeo e Arquiteturas Offline-First.">
+  <meta name="keywords" content="Flutter Developer, React Developer, TypeScript, Mobile, Frontend, IoT, Uberlândia, Software Engineer">
+  <meta name="author" content="Gustavo Barcelos Machado">
+  <meta property="og:title" content="Gustavo Barcelos Machado | Mobile &amp; Frontend Engineer">
+  <meta property="og:description" content="Engenheiro de Software com 5 anos em Flutter, React e IoT">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/img/icon.png">
+  <link rel="icon" href="./assets/img/icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">
-                <img src="./assets/img/logo.png" alt="GBM.dev" loading="eager">
-                <!-- <span>GBM.dev</span> -->
-            </a>
 
-            <div class="nav__menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
-                            <i class='bx bx-home-alt'></i>
-                            <span lang="pt-BR">Início</span>
-                            <span lang="en">Home</span>
-                            <span lang="es">Inicio</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">
-                            <i class='bx bx-user'></i>
-                            <span lang="pt-BR">Sobre</span>
-                            <span lang="en">About</span>
-                            <span lang="es">Sobre</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#work" class="nav__link">
-                            <i class='bx bx-briefcase-alt-2'></i>
-                            <span lang="pt-BR">Projetos</span>
-                            <span lang="en">Projects</span>
-                            <span lang="es">Proyectos</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#skills" class="nav__link">
-                            <i class='bx bx-code-alt'></i>
-                            <span lang="pt-BR">Skills</span>
-                            <span lang="en">Skills</span>
-                            <span lang="es">Skills</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#stats" class="nav__link">
-                            <i class='bx bx-bar-chart-alt-2'></i>
-                            <span lang="pt-BR">Métricas</span>
-                            <span lang="en">Metrics</span>
-                            <span lang="es">Métricas</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#documents" class="nav__link">
-                            <i class='bx bx-file'></i>
-                            <span lang="pt-BR">Documentos</span>
-                            <span lang="en">Documents</span>
-                            <span lang="es">Documentos</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class='bx bx-message-square-detail'></i>
-                            <span lang="pt-BR">Contato</span>
-                            <span lang="en">Contact</span>
-                            <span lang="es">Contacto</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header class="header" id="header">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#home" class="nav__logo">
+      <img src="./assets/img/logo.png" alt="GBM.dev" loading="eager" width="34" height="34">
+    </a>
 
-            <div class="nav__menu">
-                <div class="lang-selector">
-                    <span class="lang-option active" data-lang="pt-BR">PT</span>
-                    <span class="lang-option" data-lang="en">EN</span>
-                    <span class="lang-option" data-lang="es">ES</span>
-                </div>
+    <div class="nav__menu">
+      <ul class="nav__list" role="list">
+        <li><a href="#home"       class="nav__link active-link"><i class="bx bx-home-alt"></i><span data-i18n="nav.home"></span></a></li>
+        <li><a href="#about"      class="nav__link"><i class="bx bx-user"></i><span data-i18n="nav.about"></span></a></li>
+        <li><a href="#experience" class="nav__link"><i class="bx bx-briefcase"></i><span data-i18n="nav.experience"></span></a></li>
+        <li><a href="#work"       class="nav__link"><i class="bx bx-briefcase-alt-2"></i><span data-i18n="nav.work"></span></a></li>
+        <li><a href="#documents"  class="nav__link"><i class="bx bx-file"></i><span data-i18n="nav.documents"></span></a></li>
+        <li><a href="#contact"    class="nav__link"><i class="bx bx-message-square-detail"></i><span data-i18n="nav.contact"></span></a></li>
+      </ul>
+    </div>
 
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class='bx bx-moon'></i>
-                </button>
-            </div>
-        </nav>
-    </header>
+    <div class="nav__controls">
+      <div class="lang-selector" role="group" aria-label="Language selector">
+        <span class="lang-option" data-lang="pt-BR" role="button" tabindex="0">PT</span>
+        <span class="lang-option" data-lang="en"    role="button" tabindex="0">EN</span>
+        <span class="lang-option" data-lang="es"    role="button" tabindex="0">ES</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" aria-pressed="false">
+        <i class="bx bx-moon"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 
-    <!-- Main -->
-    <main class="main">
-        <!-- Home Section -->
-        <section class="home section" id="home">
-            <div class="home__container container">
-                <div class="home__data">
-                    <span class="home__greeting" lang="pt-BR">Olá, eu sou</span>
-                    <span class="home__greeting" lang="en">Hello, I'm</span>
-                    <span class="home__greeting" lang="es">Hola, soy</span>
-                    
-                    <h1 class="home__name">
-                        Gustavo <span class="highlight">Barcelos</span> Machado
-                    </h1>
-                    
-                    <h2 class="home__title" lang="pt-BR">Engenheiro Mobile (Flutter) & Frontend</h2>
-                    <h2 class="home__title" lang="en">Mobile (Flutter) & Frontend Engineer</h2>
-                    <h2 class="home__title" lang="es">Ingeniero Mobile (Flutter) & Frontend</h2>
-                    
-                    <p class="home__description" lang="pt-BR">
-                        Engenheiro de Software com quase 5 anos de experiência criando interfaces de alta complexidade para IoT, Streaming de Vídeo e Hardware. 
-                        Especialista em Flutter, React/TypeScript e arquiteturas Offline-First.
-                    </p>
-                    <p class="home__description" lang="en">
-                        Software Engineer with nearly 5 years of experience creating high-complexity interfaces for IoT, Video Streaming, and Hardware. 
-                        Specialist in Flutter, React/TypeScript, and Offline-First architectures.
-                    </p>
-                    <p class="home__description" lang="es">
-                        Ingeniero de Software con casi 5 años de experiencia creando interfaces de alta complejidad para IoT, Streaming de Video y Hardware. 
-                        Especialista en Flutter, React/TypeScript y arquitecturas Offline-First.
-                    </p>
+<main class="main">
 
-                    <div class="home__stats">
-                        <div class="stat-item">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label" lang="pt-BR">Anos de Experiência</span>
-                            <span class="stat-label" lang="en">Years Experience</span>
-                            <span class="stat-label" lang="es">Años de Experiencia</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label" lang="pt-BR">Projetos Entregues</span>
-                            <span class="stat-label" lang="en">Projects Delivered</span>
-                            <span class="stat-label" lang="es">Proyectos Entregados</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label" lang="pt-BR">Idiomas</span>
-                            <span class="stat-label" lang="en">Languages</span>
-                            <span class="stat-label" lang="es">Idiomas</span>
-                        </div>
-                    </div>
+<!-- ═══════════════════ 1. HERO ═══════════════════ -->
+<section class="home section" id="home">
+  <!-- Canvas particle network background -->
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
-                    <div class="home__buttons">
-                        <a href="#documents" class="button button--primary">
-                            <i class='bx bxs-download'></i>
-                            <span lang="pt-BR">Download CV</span>
-                            <span lang="en">Download CV</span>
-                            <span lang="es">Descargar CV</span>
-                        </a>
-                        <a href="#contact" class="button button--ghost">
-                            <span lang="pt-BR">Vamos conversar</span>
-                            <span lang="en">Let's talk</span>
-                            <span lang="es">Hablemos</span>
-                        </a>
-                    </div>
+  <div class="home__container container">
+    <div class="home__data">
+      <span class="home__greeting" data-i18n="hero.greeting"></span>
+      <h1 class="home__name">Gustavo <span class="highlight">Barcelos</span> Machado</h1>
+      <h2 class="home__title" data-i18n-html="hero.title"></h2>
 
-                    <div class="home__social">
-                        <a href="https://www.linkedin.com/in/gustavo-machado-40a250186" target="_blank" class="home__social-link" aria-label="LinkedIn">
-                            <i class='bx bxl-linkedin'></i>
-                        </a>
-                        <a href="https://github.com/gusbmachado" target="_blank" class="home__social-link" aria-label="GitHub">
-                            <i class='bx bxl-github'></i>
-                        </a>
-                        <a href="mailto:gustavobmachado105@gmail.com" class="home__social-link" aria-label="Email">
-                            <i class='bx bx-envelope'></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <p class="home__description" data-i18n-html="hero.description"></p>
 
-        
-        <!-- About Section -->
-        <section class="about section" id="about">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle" lang="pt-BR">Minha Jornada</span>
-                    <span class="section-subtitle" lang="en">My Journey</span>
-                    <span class="section-subtitle" lang="es">Mi Trayectoria</span>
-
-                    <h2 class="section-title" lang="pt-BR">Sobre Mim</h2>
-                    <h2 class="section-title" lang="en">About Me</h2>
-                    <h2 class="section-title" lang="es">Sobre Mí</h2>
-
-                    <p class="section-description" lang="pt-BR">
-                        Engenheiro da Computação apaixonado por criar soluções que conectam o mundo físico ao digital.
-                    </p>
-                    <p class="section-description" lang="en">
-                        Computer Engineer passionate about building solutions that connect the physical and digital worlds.
-                    </p>
-                    <p class="section-description" lang="es">
-                        Ingeniero en Computación apasionado por crear soluciones que conectan el mundo físico y el digital.
-                    </p>
-                </div>
-
-                <div class="about__container">
-                    <div class="about__info">
-                        <div class="about__box fade-in">
-                            <i class='bx bx-briefcase about__icon'></i>
-                            <h3 class="about__title">~5</h3>
-                            <span class="about__subtitle" lang="pt-BR">Anos de Experiência</span>
-                            <span class="about__subtitle" lang="en">Years Experience</span>
-                            <span class="about__subtitle" lang="es">Años de Experiencia</span>
-                        </div>
-
-                        <div class="about__box fade-in">
-                            <i class='bx bx-code-block about__icon'></i>
-                            <h3 class="about__title">15+</h3>
-                            <span class="about__subtitle" lang="pt-BR">Projetos Entregues</span>
-                            <span class="about__subtitle" lang="en">Projects Delivered</span>
-                            <span class="about__subtitle" lang="es">Proyectos Entregados</span>
-                        </div>
-
-                        <div class="about__box fade-in">
-                            <i class='bx bxs-graduation about__icon'></i>
-                            <h3 class="about__title" lang="pt-BR">Mestrado</h3>
-                            <h3 class="about__title" lang="en">MSc</h3>
-                            <h3 class="about__title" lang="es">Máster</h3>
-                            <span class="about__subtitle" lang="pt-BR">Ciência da Computação - UFU</span>
-                            <span class="about__subtitle" lang="en">Computer Science - UFU</span>
-                            <span class="about__subtitle" lang="es">Ciencias de la Computación - UFU</span>
-                        </div>
-                    </div>
-
-                    <div class="about__data fade-in">
-                        <p class="about__description" lang="pt-BR">
-                            Atualmente na <strong>ViaSoftware/Viacast</strong>, atuo no desenvolvimento de produtos proprietários de hardware e software para o mercado de Broadcast e Telecomunicações.
-                            <br><br>
-                            Minha expertise está em criar aplicações mobile com <strong>Flutter</strong> que se comunicam diretamente com hardware embarcado, além de desenvolver interfaces web complexas com <strong>React/TypeScript</strong>, sempre focando em arquiteturas Offline-First e otimização de performance.
-                            <br><br>
-                            Tenho experiência com integração de dispositivos IoT, protocolos de comunicação (AT Commands, WebSocket, HTTP), streaming de vídeo (HLS) e desenvolvimento de sistemas que funcionam tanto online quanto offline.
-                        </p>
-                        <p class="about__description" lang="en">
-                            Currently at <strong>ViaSoftware/Viacast</strong>, I build proprietary hardware and software products for the Broadcast and Telecommunications market.
-                            <br><br>
-                            My expertise includes mobile apps with <strong>Flutter</strong> that communicate directly with embedded hardware, and complex web interfaces with <strong>React/TypeScript</strong>, with a strong focus on Offline-First architectures and performance.
-                            <br><br>
-                            I have experience integrating IoT devices, communication protocols (AT Commands, WebSocket, HTTP), video streaming (HLS), and systems that work reliably both online and offline.
-                        </p>
-                        <p class="about__description" lang="es">
-                            Actualmente en <strong>ViaSoftware/Viacast</strong>, desarrollo productos propietarios de hardware y software para el mercado de Broadcast y Telecomunicaciones.
-                            <br><br>
-                            Mi experiencia incluye apps móviles con <strong>Flutter</strong> que se comunican con hardware embebido e interfaces web complejas con <strong>React/TypeScript</strong>, con foco en arquitecturas Offline-First y rendimiento.
-                            <br><br>
-                            Tengo experiencia con integración IoT, protocolos (AT Commands, WebSocket, HTTP), streaming de video (HLS) y sistemas que funcionan tanto online como offline.
-                        </p>
-
-                        <a href="#contact" class="button button--primary">
-                            <span lang="pt-BR">Entre em Contato</span>
-                            <span lang="en">Get in touch</span>
-                            <span lang="es">Contacto</span>
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Work Section -->
-        <section class="work section alt" id="work">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle" lang="pt-BR">Portfólio</span>
-                    <span class="section-subtitle" lang="en">Portfolio</span>
-                    <span class="section-subtitle" lang="es">Portafolio</span>
-                    
-                    <h2 class="section-title" lang="pt-BR">Projetos em Destaque</h2>
-                    <h2 class="section-title" lang="en">Featured Projects</h2>
-                    <h2 class="section-title" lang="es">Proyectos Destacados</h2>
-                </div>
-
-                <div class="work__filters">
-                    <span class="work__item" data-filter="all" lang="pt-BR">Todos</span>
-                    <span class="work__item" data-filter="all" lang="en">All</span>
-                    <span class="work__item" data-filter="all" lang="es">Todos</span>
-                    
-                    <span class="work__item" data-filter=".mobile" lang="pt-BR">Mobile</span>
-                    <span class="work__item" data-filter=".mobile" lang="en">Mobile</span>
-                    <span class="work__item" data-filter=".mobile" lang="es">Mobile</span>
-                    <span class="work__item" data-filter=".web" lang="pt-BR">Web</span>
-                    <span class="work__item" data-filter=".web" lang="en">Web</span>
-                    <span class="work__item" data-filter=".web" lang="es">Web</span>
-                    <span class="work__item" data-filter=".iot" lang="pt-BR">IoT</span>
-                    <span class="work__item" data-filter=".iot" lang="en">IoT</span>
-                    <span class="work__item" data-filter=".iot" lang="es">IoT</span>
-                </div>
-
-                <div class="work__container">
-                    <article class="work__card mix mobile iot fade-in">
-                        <img src="./assets/img/projeto-1.png" alt="Case Controller" class="work__img" loading="lazy">
-                        <div class="work__content">
-                            <h3 class="work__title">Vlink Controller</h3>
-                            <p class="work__tech">Flutter • IoT • Comandos AT • Portas Seriais</p>
-                            <p class="work__description" lang="pt-BR">
-                                Liderança técnica no desenvolvimento de app crítico para modems 4G/5G. Automatização de APNs e telemetria industrial via hardware.
-                            </p>
-                            <p class="work__description" lang="en">
-                                Technical lead for critical 4G/5G modem management app. APN automation and industrial telemetry via hardware integration.
-                            </p>
-                            <a href="#" class="work__button">
-                                <span lang="pt-BR">Ver detalhes</span><span lang="en">View details</span>
-                                <i class='bx bx-right-arrow-alt'></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="work__card mix web fade-in">
-                        <img src="./assets/img/projeto-2.png" alt="EPG Editor" class="work__img" loading="lazy">
-                        <div class="work__content">
-                            <h3 class="work__title">EPG Editor (SaaS)</h3>
-                            <p class="work__tech">React • TypeScript • Offline-First • Broadcast</p>
-                            <p class="work__description" lang="pt-BR">
-                                Interface SaaS para emissoras de TV (Padrão Globo). Arquitetura Serverless com operação 100% offline e alta performance.
-                            </p>
-                            <p class="work__description" lang="en">
-                                SaaS solution for TV broadcasters (Globo Standard). Serverless architecture with 100% offline operation and high performance.
-                            </p>
-                            <a href="https://viacast.tv/epg/" target="_blank" class="work__button">
-                                <span lang="pt-BR">Ver demo</span><span lang="en">View demo</span>
-                                <i class='bx bx-right-arrow-alt'></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="work__card mix web fade-in">
-                        <img src="./assets/img/projeto-3.gif" alt="Modernização de Sistemas" class="work__img" loading="lazy">
-                        <div class="work__content">
-                            <h3 class="work__title">Sistemas de Broadcast SPA</h3>
-                            <p class="work__tech">React • Vite • Tailwind • Modernização</p>
-                            <p class="work__description" lang="pt-BR">
-                                Refatoração completa de interfaces legadas (PHP) para SPAs modernas, otimizando o controle de encoders e decoders de vídeo.
-                            </p>
-                            <p class="work__description" lang="en">
-                                Full refactor of legacy PHP interfaces into modern SPAs, optimizing video encoder and decoder control systems.
-                            </p>
-                            <a href="#" class="work__button">
-                                <span lang="pt-BR">Ver detalhes</span><span lang="en">View details</span>
-                                <i class='bx bx-right-arrow-alt'></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="work__card mix mobile iot fade-in">
-                        <img src="./assets/img/projeto-4.png" alt="Sistema PM" class="work__img" loading="lazy">
-                        <div class="work__content">
-                            <h3 class="work__title" lang="pt-BR">Comunicação Tática via Rádio</h3>
-                            <h3 class="work__title" lang="en">Tactical Radio Comms</h3>
-                            <p class="work__tech">Flutter • NanoPi • Microcontroladores • Networking</p>
-                            <p class="work__description" lang="pt-BR">
-                                App para controle de codificação em áreas remotas. Dashboard de telemetria em tempo real e integração com APIs de roteadores.
-                            </p>
-                            <p class="work__description" lang="en">
-                                App for encoding control in remote areas. Real-time telemetry dashboard and network management via router API integration.
-                            </p>
-                            <a href="#" class="work__button">
-                                <span lang="pt-BR">Ver detalhes</span><span lang="en">View details</span>
-                                <i class='bx bx-right-arrow-alt'></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="work__card mix iot fade-in">
-                        <img src="./assets/img/projeto-5.png" alt="Playcast GPI" class="work__img" loading="lazy">
-                        <div class="work__content">
-                            <h3 class="work__title">Playcast GPI</h3>
-                            <p class="work__tech">Node.js • Automação • Hardware • Sincronização</p>
-                            <p class="work__description" lang="pt-BR">
-                                Automação de playout integrada ao hardware para sincronização de transmissões críticas em estúdios de televisão.
-                            </p>
-                            <p class="work__description" lang="en">
-                                Playout automation integrated with hardware for critical broadcast synchronization in TV studios.
-                            </p>
-                            <a href="#" class="work__button">
-                                <span lang="pt-BR">Ver detalhes</span><span lang="en">View details</span>
-                                <i class='bx bx-right-arrow-alt'></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="work__card mix web fade-in">
-                        <img src="./assets/img/projeto-6.png" alt="PWA Central" class="work__img" loading="lazy">
-                        <div class="work__content">
-                            <h3 class="work__title">PWA Comunitário</h3>
-                            <p class="work__tech">React • TypeScript • Firebase • Serverless</p>
-                            <p class="work__description" lang="pt-BR">
-                                Progressive Web App com arquitetura Serverless (Firestore/Auth) para alta escalabilidade e baixo custo de operação.
-                            </p>
-                            <p class="work__description" lang="en">
-                                Progressive Web App with Serverless architecture (Firestore/Auth) for high scalability and low operating costs.
-                            </p>
-                            <a href="#" class="work__button">
-                                <span lang="pt-BR">Ver demo</span><span lang="en">View demo</span>
-                                <i class='bx bx-right-arrow-alt'></i>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section class="skills section" id="skills">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle" lang="pt-BR">Tech Stack</span>
-                    <span class="section-subtitle" lang="en">Tech Stack</span>
-                    <span class="section-subtitle" lang="es">Tech Stack</span>
-
-                    <h2 class="section-title" lang="pt-BR">Competências</h2>
-                    <h2 class="section-title" lang="en">Skills</h2>
-                    <h2 class="section-title" lang="es">Competencias</h2>
-
-                    <p class="section-description" lang="pt-BR">
-                        Tecnologias e ferramentas que uso para construir produtos robustos e escaláveis.
-                    </p>
-                    <p class="section-description" lang="en">
-                        Technologies and tools I use to build robust, scalable products.
-                    </p>
-                    <p class="section-description" lang="es">
-                        Tecnologías y herramientas que uso para crear productos robustos y escalables.
-                    </p>
-                </div>
-
-                <div class="skills__container">
-                    <div class="skills__content fade-in">
-                        <h3 class="skills__title">
-                            <i class='bx bx-mobile-alt'></i>
-                            <span lang="pt-BR">Mobile</span>
-                            <span lang="en">Mobile</span>
-                            <span lang="es">Mobile</span>
-                        </h3>
-                        <div class="skills__box">
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name">Flutter / Dart</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name" lang="pt-BR">Integração nativa (Android)</span><span class="skills__name" lang="en">Native integration (Android)</span><span class="skills__name" lang="es">Integración nativa (Android)</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name" lang="pt-BR">Serial / AT Commands</span><span class="skills__name" lang="en">Serial / AT Commands</span><span class="skills__name" lang="es">Serial / AT Commands</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name">PWA</span></div>
-                        </div>
-                    </div>
-
-                    <div class="skills__content fade-in">
-                        <h3 class="skills__title">
-                            <i class='bx bx-code-alt'></i>
-                            <span lang="pt-BR">Frontend</span>
-                            <span lang="en">Frontend</span>
-                            <span lang="es">Frontend</span>
-                        </h3>
-                        <div class="skills__box">
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name">React / TypeScript</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name">Next.js / Vite</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name">Offline-First</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name" lang="pt-BR">Performance & UX</span><span class="skills__name" lang="en">Performance & UX</span><span class="skills__name" lang="es">Rendimiento & UX</span></div>
-                        </div>
-                    </div>
-
-                    <div class="skills__content fade-in">
-                        <h3 class="skills__title">
-                            <i class='bx bx-chip'></i>
-                            <span lang="pt-BR">IoT & Streaming</span>
-                            <span lang="en">IoT & Streaming</span>
-                            <span lang="es">IoT & Streaming</span>
-                        </h3>
-                        <div class="skills__box">
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name">WebSocket / HTTP</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name">HLS</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name">MQTT (base)</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name" lang="pt-BR">Observabilidade</span><span class="skills__name" lang="en">Observability</span><span class="skills__name" lang="es">Observabilidad</span></div>
-                        </div>
-                    </div>
-
-                    <div class="skills__content fade-in">
-                        <h3 class="skills__title">
-                            <i class='bx bx-brain'></i>
-                            <span lang="pt-BR">IA & Data Science</span>
-                            <span lang="en">AI & Data Science</span>
-                        </h3>
-                        <div class="skills__box">
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name">Python (PyTorch)</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name" lang="pt-BR">Visão Computacional (OpenCV)</span><span lang="en">Computer Vision</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name">Streamlit / FastAPI</span></div>
-                            <div class="skill__data"><i class='bx bx-badge-check'></i><span class="skills__name" lang="pt-BR">Pesquisa Científica (Mestrado)</span><span lang="en">Scientific Research</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="stats section" id="stats">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle" lang="pt-BR">Experiência Técnica</span>
-                    <span class="section-subtitle" lang="en">Technical Experience</span>
-                    <span class="section-subtitle" lang="es">Experiencia Técnica</span>
-                    
-                    <h2 class="section-title" lang="pt-BR">Métricas & Stack</h2>
-                    <h2 class="section-title" lang="en">Metrics & Stack</h2>
-                    <h2 class="section-title" lang="es">Métricas & Stack</h2>
-                </div>
-
-                <div class="tech-stack">
-                    <!-- Mobile Development -->
-                    <div class="tech-category fade-in">
-                        <div class="tech-category__header">
-                            <i class='bx bx-mobile-alt tech-category__icon'></i>
-                            <h3 class="tech-category__title" lang="pt-BR">Mobile Development</h3>
-                            <h3 class="tech-category__title" lang="en">Mobile Development</h3>
-                            <h3 class="tech-category__title" lang="es">Desarrollo Mobile</h3>
-                        </div>
-                        
-                        <div class="tech-item">
-                            <div class="tech-item__header">
-                                <span class="tech-item__name">Flutter / Dart</span>
-                                <span class="tech-item__years" lang="pt-BR">4 anos</span>
-                                <span class="tech-item__years" lang="en">4 years</span>
-                                <span class="tech-item__years" lang="es">4 años</span>
-                            </div>
-                            <div class="tech-item__bar">
-                                <div class="tech-item__progress" style="width: 85%"></div>
-                            </div>
-                            <div class="tech-item__projects" lang="pt-BR">8+ projetos | IoT & Hardware Integration</div>
-                            <div class="tech-item__projects" lang="en">8+ projects | IoT & Hardware Integration</div>
-                            <div class="tech-item__projects" lang="es">8+ proyectos | IoT & Integración Hardware</div>
-                        </div>
-
-                        <div class="tech-item">
-                            <div class="tech-item__header">
-                                <span class="tech-item__name" lang="pt-BR">Integração Nativa Android</span>
-                                <span class="tech-item__name" lang="en">Native Android Integration</span>
-                                <span class="tech-item__name" lang="es">Integración Nativa Android</span>
-                                <span class="tech-item__years" lang="pt-BR">3 anos</span>
-                                <span class="tech-item__years" lang="en">3 years</span>
-                                <span class="tech-item__years" lang="es">3 años</span>
-                            </div>
-                            <div class="tech-item__bar">
-                                <div class="tech-item__progress" style="width: 70%"></div>
-                            </div>
-                            <div class="tech-item__projects" lang="pt-BR">Comandos AT, Portas Seriais</div>
-                            <div class="tech-item__projects" lang="en">AT Commands, Serial Ports</div>
-                            <div class="tech-item__projects" lang="es">Comandos AT, Puertos Seriales</div>
-                        </div>
-                    </div>
-
-                    <!-- Frontend Development -->
-                    <div class="tech-category fade-in">
-                        <div class="tech-category__header">
-                            <i class='bx bx-code-alt tech-category__icon'></i>
-                            <h3 class="tech-category__title" lang="pt-BR">Frontend Development</h3>
-                            <h3 class="tech-category__title" lang="en">Frontend Development</h3>
-                            <h3 class="tech-category__title" lang="es">Desarrollo Frontend</h3>
-                        </div>
-                        
-                        <div class="tech-item">
-                            <div class="tech-item__header">
-                                <span class="tech-item__name">React / Next.js</span>
-                                <span class="tech-item__years" lang="pt-BR">4.5 anos</span>
-                                <span class="tech-item__years" lang="en">4.5 years</span>
-                                <span class="tech-item__years" lang="es">4.5 años</span>
-                            </div>
-                            <div class="tech-item__bar">
-                                <div class="tech-item__progress" style="width: 90%"></div>
-                            </div>
-                            <div class="tech-item__projects" lang="pt-BR">10+ projetos | SPA & Serverless</div>
-                            <div class="tech-item__projects" lang="en">10+ projects | SPA & Serverless</div>
-                            <div class="tech-item__projects" lang="es">10+ proyectos | SPA & Serverless</div>
-                        </div>
-
-                        <div class="tech-item">
-                            <div class="tech-item__header">
-                                <span class="tech-item__name">TypeScript</span>
-                                <span class="tech-item__years" lang="pt-BR">4 anos</span>
-                                <span class="tech-item__years" lang="en">4 years</span>
-                                <span class="tech-item__years" lang="es">4 años</span>
-                            </div>
-                            <div class="tech-item__bar">
-                                <div class="tech-item__progress" style="width: 85%"></div>
-                            </div>
-                            <div class="tech-item__projects" lang="pt-BR">Todos projetos recentes</div>
-                            <div class="tech-item__projects" lang="en">All recent projects</div>
-                            <div class="tech-item__projects" lang="es">Todos proyectos recientes</div>
-                        </div>
-
-                        <div class="tech-item">
-                            <div class="tech-item__header">
-                                <span class="tech-item__name">Tailwind CSS</span>
-                                <span class="tech-item__years" lang="pt-BR">2 anos</span>
-                                <span class="tech-item__years" lang="en">2 years</span>
-                                <span class="tech-item__years" lang="es">2 años</span>
-                            </div>
-                            <div class="tech-item__bar">
-                                <div class="tech-item__progress" style="width: 75%"></div>
-                            </div>
-                            <div class="tech-item__projects" lang="pt-BR">UI modernas & responsivas</div>
-                            <div class="tech-item__projects" lang="en">Modern & responsive UIs</div>
-                            <div class="tech-item__projects" lang="es">UIs modernas & responsivas</div>
-                        </div>
-                    </div>
-
-                    <!-- Backend & DevOps -->
-                    <div class="tech-category fade-in">
-                        <div class="tech-category__header">
-                            <i class='bx bx-server tech-category__icon'></i>
-                            <h3 class="tech-category__title">Backend & DevOps</h3>
-                        </div>
-                        
-                        <div class="tech-item">
-                            <div class="tech-item__header">
-                                <span class="tech-item__name">Node.js</span>
-                                <span class="tech-item__years" lang="pt-BR">3 anos</span>
-                                <span class="tech-item__years" lang="en">3 years</span>
-                                <span class="tech-item__years" lang="es">3 años</span>
-                            </div>
-                            <div class="tech-item__bar">
-                                <div class="tech-item__progress" style="width: 70%"></div>
-                            </div>
-                            <div class="tech-item__projects">REST APIs & WebSocket</div>
-                        </div>
-
-                        <div class="tech-item">
-                            <div class="tech-item__header">
-                                <span class="tech-item__name">Firebase</span>
-                                <span class="tech-item__years" lang="pt-BR">3 anos</span>
-                                <span class="tech-item__years" lang="en">3 years</span>
-                                <span class="tech-item__years" lang="es">3 años</span>
-                            </div>
-                            <div class="tech-item__bar">
-                                <div class="tech-item__progress" style="width: 80%"></div>
-                            </div>
-                            <div class="tech-item__projects">Auth, Firestore, Hosting</div>
-                        </div>
-
-                        <div class="tech-item">
-                            <div class="tech-item__header">
-                                <span class="tech-item__name">Docker & Linux</span>
-                                <span class="tech-item__years" lang="pt-BR">3 anos</span>
-                                <span class="tech-item__years" lang="en">3 years</span>
-                                <span class="tech-item__years" lang="es">3 años</span>
-                            </div>
-                            <div class="tech-item__bar">
-                                <div class="tech-item__progress" style="width: 65%"></div>
-                            </div>
-                            <div class="tech-item__projects">Shell Scripting, Containers</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Documents Section -->
-        <section class="documents section" id="documents">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle" lang="pt-BR">Downloads</span>
-                    <span class="section-subtitle" lang="en">Downloads</span>
-                    <span class="section-subtitle" lang="es">Descargas</span>
-                    
-                    <h2 class="section-title" lang="pt-BR">Documentos & Certificações</h2>
-                    <h2 class="section-title" lang="en">Documents & Certifications</h2>
-                    <h2 class="section-title" lang="es">Documentos & Certificaciones</h2>
-                    
-                    <p class="section-description" lang="pt-BR">
-                        Acesse currículos, históricos acadêmicos e documentação profissional em múltiplos idiomas.
-                    </p>
-                    <p class="section-description" lang="en">
-                        Access resumes, academic transcripts, and professional documentation in multiple languages.
-                    </p>
-                    <p class="section-description" lang="es">
-                        Acceda a currículos, historiales académicos y documentación profesional en múltiples idiomas.
-                    </p>
-                </div>
-
-                <div class="documents__grid">
-                    <!-- Resume -->
-                    <div class="doc-card fade-in">
-                        <div class="doc-card__header">
-                            <div class="doc-card__icon">
-                                <i class='bx bxs-file-doc'></i>
-                            </div>
-                            <h3 class="doc-card__title" lang="pt-BR">Currículo</h3>
-                            <h3 class="doc-card__title" lang="en">Resume / CV</h3>
-                            <h3 class="doc-card__title" lang="es">Currículum</h3>
-                        </div>
-                        <p class="doc-card__description" lang="pt-BR">
-                            Currículo profissional completo com experiência, formação e competências técnicas.
-                        </p>
-                        <p class="doc-card__description" lang="en">
-                            Complete professional resume with experience, education, and technical skills.
-                        </p>
-                        <p class="doc-card__description" lang="es">
-                            Currículum profesional completo con experiencia, formación y competencias técnicas.
-                        </p>
-                        <div class="doc-card__languages">
-                            <a href="./assets/pdf/gustavo-b-machado.pdf" download class="doc-lang-badge">
-                                <i class='bx bxs-download'></i>
-                                PT
-                            </a>
-                            <a href="./assets/pdf/gustavo-b-machado-en.pdf" download class="doc-lang-badge">
-                                <i class='bx bxs-download'></i>
-                                EN
-                            </a>
-                            <a href="./assets/pdf/gustavo-b-machado-es.pdf" download class="doc-lang-badge">
-                                <i class='bx bxs-download'></i>
-                                ES
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Cover Letter -->
-                    <div class="doc-card fade-in">
-                        <div class="doc-card__header">
-                            <div class="doc-card__icon">
-                                <i class='bx bxs-envelope'></i>
-                            </div>
-                            <h3 class="doc-card__title" lang="pt-BR">Carta de Apresentação</h3>
-                            <h3 class="doc-card__title" lang="en">Cover Letter</h3>
-                            <h3 class="doc-card__title" lang="es">Carta de Presentación</h3>
-                        </div>
-                        <p class="doc-card__description" lang="pt-BR">
-                            Carta de apresentação personalizada destacando motivações e objetivos profissionais.
-                        </p>
-                        <p class="doc-card__description" lang="en">
-                            Personalized cover letter highlighting motivations and professional objectives.
-                        </p>
-                        <p class="doc-card__description" lang="es">
-                            Carta de presentación personalizada destacando motivaciones y objetivos profesionales.
-                        </p>
-                        <div class="doc-card__languages">
-                            <a href="./assets/pdf/cover-letter.pdf" class="doc-lang-badge js-open-pdf" data-pdf="./assets/pdf/cover-letter.pdf" data-title-pt="Carta de Apresentação" data-title-en="Cover Letter" data-title-es="Carta de Presentación"><i class='bx bx-show'></i><span lang=\"pt-BR\">Ver</span><span lang=\"en\">View</span><span lang=\"es\">Ver</span></a><a href="./assets/pdf/cover-letter.pdf" download class="doc-lang-badge">
-                                <i class='bx bxs-download'></i>
-                                PT
-                            </a>
-                            <a href="./assets/pdf/cover-letter-en.pdf" download class="doc-lang-badge">
-                                <i class='bx bxs-download'></i>
-                                EN
-                            </a>
-                            <a href="./assets/pdf/cover-letter-es.pdf" download class="doc-lang-badge">
-                                <i class='bx bxs-download'></i>
-                                ES
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Academic Transcripts -->
-                    <div class="doc-card fade-in">
-                        <div class="doc-card__header">
-                            <div class="doc-card__icon">
-                                <i class='bx bxs-graduation'></i>
-                            </div>
-                            <h3 class="doc-card__title" lang="pt-BR">Histórico Acadêmico</h3>
-                            <h3 class="doc-card__title" lang="en">Academic Transcripts</h3>
-                            <h3 class="doc-card__title" lang="es">Historial Académico</h3>
-                        </div>
-                        <p class="doc-card__description" lang="pt-BR">
-                            Histórico completo do Bacharelado em Engenharia da Computação (UFU) com métricas de desempenho.
-                        </p>
-                        <p class="doc-card__description" lang="en">
-                            Complete transcript from Computer Engineering Bachelor (UFU) with performance metrics.
-                        </p>
-                        <p class="doc-card__description" lang="es">
-                            Historial completo de Licenciatura en Ingeniería Informática (UFU) con métricas de rendimiento.
-                        </p>
-                        <div class="doc-card__languages">
-                            <a href="./assets/pdf/transcripts.pdf" download class="doc-lang-badge">
-                                <i class='bx bxs-download'></i>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Diploma -->
-                    <div class="doc-card fade-in">
-                        <div class="doc-card__header">
-                            <div class="doc-card__icon">
-                                <i class='bx bxs-award'></i>
-                            </div>
-                            <h3 class="doc-card__title" lang="pt-BR">Diploma</h3>
-                            <h3 class="doc-card__title" lang="en">Diploma</h3>
-                            <h3 class="doc-card__title" lang="es">Diploma</h3>
-                        </div>
-                        <p class="doc-card__description" lang="pt-BR">
-                            Diploma de Engenharia da Computação - Universidade Federal de Uberlândia (UFU).
-                        </p>
-                        <p class="doc-card__description" lang="en">
-                            Computer Engineering Diploma - Federal University of Uberlândia (UFU).
-                        </p>
-                        <p class="doc-card__description" lang="es">
-                            Diploma de Ingeniería Informática - Universidad Federal de Uberlândia (UFU).
-                        </p>
-                        <div class="doc-card__languages">
-                            <a href="./assets/pdf/diploma.pdf" class="doc-lang-badge js-open-pdf" data-pdf="./assets/pdf/diploma.pdf" data-title-pt="Diploma" data-title-en="Diploma" data-title-es="Diploma"><i class='bx bx-show'></i><span lang=\"pt-BR\">Ver</span><span lang=\"en\">View</span><span lang=\"es\">Ver</span></a><a href="./assets/pdf/diploma.pdf" download class="doc-lang-badge">
-                                <i class='bx bxs-download'></i>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-                    <!-- Certificados -->
-                    <div class="doc-card fade-in">
-                        <div class="doc-card__header">
-                            <div class="doc-card__icon">
-                                <i class='bx bxs-certification'></i>
-                            </div>
-                            <h3 class="doc-card__title">AWS Academy Graduate - AWS Academy Cloud Foundations</h3>
-                        </div>
-                        <p class="doc-card__description">
-                            Certificação oficial AWS Academy Cloud Foundations. Emitido por Amazon Web Services (AWS).
-                        </p>
-                        <div class="doc-card__languages">
-                            <a class="doc-lang-badge" href="#" rel="noopener" target="_blank">
-                                <i class='bx bx-link-external'></i>
-                                Exibir credencial
-                            </a>
-                        </div>
-                    </div>
-                    <div class="doc-card fade-in">
-                        <div class="doc-card__header">
-                            <div class="doc-card__icon">
-                                <i class='bx bxs-certification'></i>
-                            </div>
-                            <h3 class="doc-card__title">Mathematics for Machine Learning</h3>
-                        </div>
-                        <p class="doc-card__description">
-                            Certificação oficial Mathematics for Machine Learning. Emitido por Imperial College London.
-                        </p>
-                        <div class="doc-card__languages">
-                            <a class="doc-lang-badge" href="#" rel="noopener" target="_blank">
-                                <i class='bx bx-link-external'></i>
-                                Exibir credencial
-                            </a>
-                        </div>
-                    </div>
-                    <div class="doc-card fade-in">
-                        <div class="doc-card__header">
-                            <div class="doc-card__icon">
-                                <i class='bx bxs-certification'></i>
-                            </div>
-                            <h3 class="doc-card__title">AWS Academy Cloud Foundations (PT)</h3>
-                        </div>
-                        <p class="doc-card__description">
-                            Certificação oficial AWS Academy Cloud Foundations em português. Emitido por Amazon Web Services (AWS).
-                        </p>
-                        <div class="doc-card__languages">
-                            <a class="doc-lang-badge" href="#" rel="noopener" target="_blank">
-                                <i class='bx bx-link-external'></i>
-                                Exibir credencial
-                            </a>
-                        </div>
-                    </div>
-        <!-- Compensation Section -->
-        <section class="compensation section alt">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle" lang="pt-BR">Informações Profissionais</span>
-                    <span class="section-subtitle" lang="en">Professional Information</span>
-                    <span class="section-subtitle" lang="es">Información Profesional</span>
-                    
-                    <h2 class="section-title" lang="pt-BR">Expectativas de Compensação</h2>
-                    <h2 class="section-title" lang="en">Compensation Expectations</h2>
-                    <h2 class="section-title" lang="es">Expectativas de Compensación</h2>
-                    
-                    <p class="section-description" lang="pt-BR">
-                        Valores de referência baseados em experiência e mercado. Flexível para discussão conforme escopo e benefícios.
-                    </p>
-                    <p class="section-description" lang="en">
-                        Reference values based on experience and market. Flexible for discussion according to scope and benefits.
-                    </p>
-                    <p class="section-description" lang="es">
-                        Valores de referencia basados en experiencia y mercado. Flexible para discusión según alcance y beneficios.
-                    </p>
-                </div>
-
-                <div class="compensation__grid">
-                    <div class="compensation__card fade-in">
-                        <div class="compensation__card-icon">
-                            <i class='bx bx-time-five'></i>
-                        </div>
-                        <h3 class="compensation__card-title" lang="pt-BR">Taxa Horária</h3>
-                        <h3 class="compensation__card-title" lang="en">Hourly Rate</h3>
-                        <h3 class="compensation__card-title" lang="es">Tarifa por Hora</h3>
-                        <div class="compensation__card-value">R$ 40/h</div>
-                        <p class="compensation__card-note" lang="pt-BR">Para projetos freelance/consultoria</p>
-                        <p class="compensation__card-note" lang="en">For freelance/consulting projects</p>
-                        <p class="compensation__card-note" lang="es">Para proyectos freelance/consultoría</p>
-                    </div>
-
-                    <div class="compensation__card fade-in">
-                        <div class="compensation__card-icon">
-                            <i class='bx bx-dollar-circle'></i>
-                        </div>
-                        <h3 class="compensation__card-title" lang="pt-BR">Salário Mensal (CLT)</h3>
-                        <h3 class="compensation__card-title" lang="en">Monthly Salary (Full-time)</h3>
-                        <h3 class="compensation__card-title" lang="es">Salario Mensual (Tiempo completo)</h3>
-                        <div class="compensation__card-value">R$ 5k-7k</div>
-                        <p class="compensation__card-note" lang="pt-BR">Baseado em experiência sênior</p>
-                        <p class="compensation__card-note" lang="en">Based on senior experience</p>
-                        <p class="compensation__card-note" lang="es">Basado en experiencia senior</p>
-                    </div>
-
-                    <div class="compensation__card fade-in">
-                        <div class="compensation__card-icon">
-                            <i class='bx bx-world'></i>
-                        </div>
-                        <h3 class="compensation__card-title" lang="pt-BR">Remoto Internacional</h3>
-                        <h3 class="compensation__card-title" lang="en">International Remote</h3>
-                        <h3 class="compensation__card-title" lang="es">Remoto Internacional</h3>
-                        <div class="compensation__card-value">US$ 15/h</div>
-                        <p class="compensation__card-note" lang="pt-BR">USD para clientes internacionais</p>
-                        <p class="compensation__card-note" lang="en">USD for international clients</p>
-                        <p class="compensation__card-note" lang="es">USD para clientes internacionales</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact section" id="contact">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle" lang="pt-BR">Contato</span>
-                    <span class="section-subtitle" lang="en">Contact</span>
-                    <span class="section-subtitle" lang="es">Contacto</span>
-                    
-                    <h2 class="section-title" lang="pt-BR">Vamos Trabalhar Juntos</h2>
-                    <h2 class="section-title" lang="en">Let's Work Together</h2>
-                    <h2 class="section-title" lang="es">Trabajemos Juntos</h2>
-                    
-                    <p class="section-description" lang="pt-BR">
-                        Interessado em colaborar ou discutir oportunidades? Entre em contato através dos canais abaixo.
-                    </p>
-                    <p class="section-description" lang="en">
-                        Interested in collaborating or discussing opportunities? Get in touch through the channels below.
-                    </p>
-                    <p class="section-description" lang="es">
-                        ¿Interesado en colaborar o discutir oportunidades? Póngase en contacto a través de los canales siguientes.
-                    </p>
-                </div>
-
-                <div class="contact__container">
-                    <div class="contact__info">
-                        <div class="contact__card fade-in">
-                            <div class="contact__card-icon">
-                                <i class='bx bx-envelope'></i>
-                            </div>
-                            <div>
-                                <h3 class="contact__card-title">Email</h3>
-                                <a href="mailto:gustavobmachado105@gmail.com" class="contact__card-data">
-                                    gustavobmachado105@gmail.com
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="contact__card fade-in">
-                            <div class="contact__card-icon">
-                                <i class='bx bxl-whatsapp'></i>
-                            </div>
-                            <div>
-                                <h3 class="contact__card-title">WhatsApp</h3>
-                                <a href="https://wa.me/5534991958314" target="_blank" class="contact__card-data">
-                                    +55 (34) 99195-8314
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="contact__card fade-in">
-                            <div class="contact__card-icon">
-                                <i class='bx bxl-linkedin'></i>
-                            </div>
-                            <div>
-                                <h3 class="contact__card-title">LinkedIn</h3>
-                                <a href="https://www.linkedin.com/in/gustavo-machado-40a250186" target="_blank" class="contact__card-data">
-                                    Gustavo Machado
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="contact__card fade-in">
-                            <div class="contact__card-icon">
-                                <i class='bx bx-map'></i>
-                            </div>
-                            <div>
-                                <h3 class="contact__card-title" lang="pt-BR">Localização</h3>
-                                <h3 class="contact__card-title" lang="en">Location</h3>
-                                <h3 class="contact__card-title" lang="es">Ubicación</h3>
-                                <span class="contact__card-data" lang="pt-BR">Uberlândia, MG - Brasil</span>
-                                <span class="contact__card-data" lang="en">Uberlândia, MG - Brazil</span>
-                                <span class="contact__card-data" lang="es">Uberlândia, MG - Brasil</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer__copy" lang="pt-BR">
-                &copy; 2025 Gustavo Barcelos Machado. Feito à mão com atenção aos detalhes.
-            </p>
-            <p class="footer__copy" lang="en">
-                &copy; 2025 Gustavo Barcelos Machado. Handcrafted with attention to detail.
-            </p>
-            <p class="footer__copy" lang="es">
-                &copy; 2025 Gustavo Barcelos Machado. Hecho a mano con atención al detalle.
-            </p>
+      <div class="home__stats">
+        <div class="stat-item">
+          <span class="stat-number" data-count="5" data-suffix="+">5+</span>
+          <span class="stat-label" data-i18n="hero.stat_years_label"></span>
         </div>
-    </footer>
+        <div class="stat-item">
+          <span class="stat-number" data-count="18" data-suffix="+">18+</span>
+          <span class="stat-label" data-i18n="hero.stat_projects_label"></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="3">3</span>
+          <span class="stat-label" data-i18n="hero.stat_langs_label"></span>
+        </div>
+      </div>
 
-<!-- Mobile Floating Icon Nav -->
+      <div class="home__buttons">
+        <a href="./assets/pdf/gustavo-b-machado.pdf" download class="button button--primary">
+          <i class="bx bxs-download"></i>
+          <span data-i18n="hero.cta_primary"></span>
+        </a>
+        <a href="#contact" class="button button--ghost">
+          <span data-i18n="hero.cta_secondary"></span>
+        </a>
+      </div>
+
+      <div class="home__social">
+        <a href="https://www.linkedin.com/in/gustavo-machado-40a250186" target="_blank" rel="noopener" class="home__social-link" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/gusbmachado"                         target="_blank" rel="noopener" class="home__social-link" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+        <a href="mailto:gustavobmachado105@gmail.com"                    class="home__social-link" aria-label="E-mail"><i class="bx bx-envelope"></i></a>
+        <a href="https://wa.me/5534991958314"                            target="_blank" rel="noopener" class="home__social-link" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 2. ABOUT ═══════════════════ -->
+<section class="about section alt" id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-subtitle" data-i18n="about.subtitle"></span>
+      <h2 class="section-title"      data-i18n="about.title"></h2>
+    </div>
+
+    <div class="about__container">
+      <div class="about__info">
+        <div class="about__box fade-in">
+          <i class="bx bx-briefcase about__icon"></i>
+          <h3 class="about__title">~5</h3>
+          <span class="about__subtitle" data-i18n="about.box_exp"></span>
+        </div>
+        <div class="about__box fade-in">
+          <i class="bx bx-code-block about__icon"></i>
+          <h3 class="about__title">18+</h3>
+          <span class="about__subtitle" data-i18n="about.box_projects"></span>
+        </div>
+        <div class="about__box fade-in">
+          <i class="bx bxs-graduation about__icon"></i>
+          <h3 class="about__title" data-i18n="about.box_degree"></h3>
+          <span class="about__subtitle" data-i18n="about.box_degree_sub"></span>
+        </div>
+        <div class="about__box fade-in">
+          <i class="bx bx-world about__icon"></i>
+          <h3 class="about__title">3</h3>
+          <span class="about__subtitle" data-i18n="about.box_langs"></span>
+        </div>
+      </div>
+
+      <div class="about__data fade-in">
+        <p class="about__description" data-i18n-html="about.description"></p>
+        <a href="#contact" class="button button--primary">
+          <span data-i18n="about.cta"></span>
+          <i class="bx bx-right-arrow-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 3. EXPERIENCE ═══════════════════ -->
+<section class="experience section" id="experience">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-subtitle" data-i18n="experience.subtitle"></span>
+      <h2 class="section-title"      data-i18n="experience.title"></h2>
+    </div>
+    <!-- Rendered by render.js from portfolio.json -->
+    <div class="timeline"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 4. WORK ═══════════════════ -->
+<section class="work section alt" id="work">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-subtitle" data-i18n="work.subtitle"></span>
+      <h2 class="section-title"      data-i18n="work.title"></h2>
+    </div>
+
+    <div class="work__filters" role="group" aria-label="Filter projects">
+      <span class="work__item active-work" data-filter="all">
+        <span data-i18n="work.filter_all"></span>
+      </span>
+      <span class="work__item" data-filter="mobile">Mobile</span>
+      <span class="work__item" data-filter="web">Web</span>
+      <span class="work__item" data-filter="iot">IoT</span>
+    </div>
+
+    <!-- Rendered by render.js -->
+    <div class="work__container"></div>
+
+    <!-- Currently Building strip -->
+    <div class="building__strip">
+      <div class="building__strip-header">
+        <span class="building__pulse-dot"></span>
+        <h3 class="building__strip-title" data-i18n="work.building_title"></h3>
+        <span class="building__strip-sub"  data-i18n="work.building_subtitle"></span>
+      </div>
+      <!-- Rendered by render.js -->
+      <div class="building__grid" id="building-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 5. DOCUMENTS ═══════════════════ -->
+<section class="documents section" id="documents">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-subtitle" data-i18n="documents.subtitle"></span>
+      <h2 class="section-title"      data-i18n="documents.title"></h2>
+    </div>
+    <!-- Rendered by render.js -->
+    <div class="documents__grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 6. CONTACT ═══════════════════ -->
+<section class="contact section alt" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-subtitle" data-i18n="contact.subtitle"></span>
+      <h2 class="section-title"      data-i18n="contact.title"></h2>
+      <p class="section-description" data-i18n="contact.description"></p>
+    </div>
+
+    <div class="contact__layout">
+
+      <!-- Contact form -->
+      <form class="contact__form fade-in" id="contactForm" novalidate>
+        <div class="contact__form-row">
+          <div class="contact__form-group">
+            <label class="contact__form-label" for="contactName" data-i18n="contact.form_name"></label>
+            <input class="contact__form-input" type="text" id="contactName" name="name"
+                   autocomplete="name" required
+                   data-i18n-placeholder="contact.form_name_ph">
+          </div>
+          <div class="contact__form-group">
+            <label class="contact__form-label" for="contactEmail" data-i18n="contact.form_email"></label>
+            <input class="contact__form-input" type="email" id="contactEmail" name="email"
+                   autocomplete="email" required
+                   data-i18n-placeholder="contact.form_email_ph">
+          </div>
+        </div>
+        <div class="contact__form-group">
+          <label class="contact__form-label" for="contactSubject" data-i18n="contact.form_subject"></label>
+          <input class="contact__form-input" type="text" id="contactSubject" name="subject"
+                 data-i18n-placeholder="contact.form_subject_ph">
+        </div>
+        <div class="contact__form-group">
+          <label class="contact__form-label" for="contactMessage" data-i18n="contact.form_message"></label>
+          <textarea class="contact__form-input contact__form-textarea"
+                    id="contactMessage" name="message" rows="5" required
+                    data-i18n-placeholder="contact.form_message_ph"></textarea>
+        </div>
+        <button class="button button--primary contact__form-btn" type="submit">
+          <i class="bx bxs-send"></i>
+          <span data-i18n="contact.form_send"></span>
+        </button>
+        <p class="contact__form-feedback" id="contactFeedback" aria-live="polite"></p>
+        <!-- Quick direct links -->
+        <div class="contact__quick-links">
+          <a href="mailto:gustavobmachado105@gmail.com" class="contact__quick-link" aria-label="Email"><i class="bx bx-envelope"></i></a>
+          <a href="https://wa.me/5534991958314" target="_blank" rel="noopener" class="contact__quick-link" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+          <a href="https://www.linkedin.com/in/gustavo-machado-40a250186" target="_blank" rel="noopener" class="contact__quick-link" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/gusbmachado" target="_blank" rel="noopener" class="contact__quick-link" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+        </div>
+      </form>
+
+      <!-- Compensation panel -->
+      <div class="compensation__panel fade-in">
+        <h3 class="compensation__panel-title" data-i18n="contact.comp_subtitle"></h3>
+        <div class="compensation__items">
+          <div class="compensation__item">
+            <span class="compensation__item-label" data-i18n="contact.comp_hourly_label"></span>
+            <span class="compensation__item-value">R$ 40/h</span>
+            <span class="compensation__item-note"  data-i18n="contact.comp_hourly_note"></span>
+          </div>
+          <div class="compensation__item">
+            <span class="compensation__item-label" data-i18n="contact.comp_clt_label"></span>
+            <span class="compensation__item-value">R$ 5k–7k</span>
+            <span class="compensation__item-note"  data-i18n="contact.comp_clt_note"></span>
+          </div>
+          <div class="compensation__item">
+            <span class="compensation__item-label" data-i18n="contact.comp_intl_label"></span>
+            <span class="compensation__item-value">US$ 15/h</span>
+            <span class="compensation__item-note"  data-i18n="contact.comp_intl_note"></span>
+          </div>
+        </div>
+        <p class="compensation__flex-note" data-i18n="contact.flexible_note"></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer__copy">
+      &copy; 2025 Gustavo Barcelos Machado
+    </p>
+  </div>
+</footer>
+
+<!-- ═══════════════════ MOBILE NAV ═══════════════════ -->
 <nav class="mnav" aria-label="Quick navigation">
-    <a href="#home" class="mnav__link js-nav-link" aria-label="Home"><i class='bx bx-home-alt'></i></a>
-    <a href="#about" class="mnav__link js-nav-link" aria-label="About"><i class='bx bx-user'></i></a>
-    <a href="#work" class="mnav__link js-nav-link" aria-label="Work"><i class='bx bx-briefcase-alt-2'></i></a>
-    <a href="#skills" class="mnav__link js-nav-link" aria-label="Skills"><i class='bx bx-code-alt'></i></a>
-    <a href="#stats" class="mnav__link js-nav-link" aria-label="Stats"><i class='bx bx-bar-chart-alt-2'></i></a>
-    <a href="#documents" class="mnav__link js-nav-link" aria-label="Documents"><i class='bx bx-file'></i></a>
-    <a href="#contact" class="mnav__link js-nav-link" aria-label="Contact"><i class='bx bx-message-square-detail'></i></a>
+  <a href="#home"       class="mnav__link" aria-label="Home"><i class="bx bx-home-alt"></i></a>
+  <a href="#about"      class="mnav__link" aria-label="About"><i class="bx bx-user"></i></a>
+  <a href="#experience" class="mnav__link" aria-label="Experience"><i class="bx bx-briefcase"></i></a>
+  <a href="#work"       class="mnav__link" aria-label="Work"><i class="bx bx-briefcase-alt-2"></i></a>
+  <a href="#documents"  class="mnav__link" aria-label="Documents"><i class="bx bx-file"></i></a>
+  <a href="#contact"    class="mnav__link" aria-label="Contact"><i class="bx bx-message-square-detail"></i></a>
 </nav>
 
-<!-- PDF Viewer Modal -->
-<div class="pdf-modal" id="pdfModal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="pdf-modal__panel" role="document">
-        <div class="pdf-modal__header">
-            <div class="pdf-modal__title" id="pdfModalTitle">PDF</div>
-            <div class="pdf-modal__actions">
-                <a class="pdf-modal__btn" id="pdfDownload" href="#" download>
-                    <i class='bx bxs-download'></i>
-                    <span lang="pt-BR">Baixar</span><span lang="en">Download</span><span lang="es">Descargar</span>
-                </a>
-                <button class="pdf-modal__btn pdf-modal__btn--close" id="pdfClose" type="button">
-                    <i class='bx bx-x'></i>
-                    <span lang="pt-BR">Fechar</span><span lang="en">Close</span><span lang="es">Cerrar</span>
-                </button>
-            </div>
-        </div>
-        <iframe class="pdf-modal__frame" id="pdfFrame" title="PDF Viewer" loading="lazy"></iframe>
+<!-- ═══════════════════ PDF MODAL ═══════════════════ -->
+<div class="pdf-modal" id="pdfModal" aria-hidden="true" role="dialog"
+     aria-modal="true" aria-labelledby="pdfModalTitle">
+  <div class="pdf-modal__panel" role="document">
+    <div class="pdf-modal__header">
+      <span class="pdf-modal__title" id="pdfModalTitle">PDF</span>
+      <div class="pdf-modal__actions">
+        <a class="pdf-modal__btn" id="pdfDownload" href="#" download>
+          <i class="bx bxs-download"></i>
+          <span data-i18n="general.download"></span>
+        </a>
+        <button class="pdf-modal__btn pdf-modal__btn--close" id="pdfClose"
+                type="button" aria-label="Close">
+          <i class="bx bx-x"></i>
+          <span data-i18n="general.close"></span>
+        </button>
+      </div>
     </div>
+    <iframe class="pdf-modal__frame" id="pdfFrame" title="PDF Viewer" loading="lazy"></iframe>
+  </div>
 </div>
 
+<!-- ═══════════════════ SCROLL UP ═══════════════════ -->
+<button class="scrollup" id="scroll-up" aria-label="Scroll to top">
+  <i class="bx bx-up-arrow-alt"></i>
+</button>
 
-
-    <!-- Scroll Up Button -->
-    <button class="scrollup" id="scroll-up" aria-label="Scroll to top">
-        <i class='bx bx-up-arrow-alt'></i>
-    </button>
-
-    <script>
-        // Language System (corrigido)
-        document.addEventListener('DOMContentLoaded', function() {
-            const langOptions = document.querySelectorAll('.lang-option');
-            const htmlEl = document.documentElement;
-
-            // Check saved language or browser preference
-            const savedLang = localStorage.getItem('language');
-            const browserLang = navigator.language || navigator.userLanguage;
-            let currentLang = savedLang || (browserLang && browserLang.startsWith('es') ? 'es' : browserLang && browserLang.startsWith('en') ? 'en' : 'pt-BR');
-
-            function setLanguage(lang) {
-                htmlEl.setAttribute('lang', lang);
-                localStorage.setItem('language', lang);
-                // Atualiza estado ativo
-                langOptions.forEach(option => {
-                    option.classList.toggle('active', option.dataset.lang === lang);
-                });
-            }
-
-            // Inicializa idioma
-            setLanguage(currentLang);
-
-            // Troca idioma ao clicar
-            langOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    setLanguage(option.dataset.lang);
-                });
-            });
-        });
-
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        const themeIcon = themeToggle.querySelector('i');
-
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
-            body.classList.add('light-mode');
-            themeIcon.classList.remove('bx-moon');
-            themeIcon.classList.add('bx-sun');
-        }
-
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            
-            if (body.classList.contains('light-mode')) {
-                themeIcon.classList.remove('bx-moon');
-                themeIcon.classList.add('bx-sun');
-                localStorage.setItem('theme', 'light');
-            } else {
-                themeIcon.classList.remove('bx-sun');
-                themeIcon.classList.add('bx-moon');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-
-        // Active Link on Scroll
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav__link, .mnav__link');
-
-        
-function activeLink() {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 120;
-        const sectionId = section.getAttribute('id');
-
-        if (!sectionId) return;
-
-        const inView = scrollY > sectionTop && scrollY <= sectionTop + sectionHeight;
-
-        if (inView) {
-            navLinks.forEach(link => link.classList.remove('active-link'));
-            document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
-                link.classList.add('active-link');
-            });
-        }
-    });
-}
-
-window.addEventListener('scroll', activeLink);
-
-// Scroll Up Button
-        const scrollUp = document.getElementById('scroll-up');
-
-        function showScrollUp() {
-            if (window.scrollY >= 350) {
-                scrollUp.classList.add('show-scroll');
-            } else {
-                scrollUp.classList.remove('show-scroll');
-            }
-        }
-
-        window.addEventListener('scroll', showScrollUp);
-
-        scrollUp.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Intersection Observer for Animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        fadeElements.forEach(element => observer.observe(element));
-
-        // Tech Progress Bars Animation
-        const techBars = document.querySelectorAll('.tech-item__progress');
-        
-        const techObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const width = entry.target.style.width;
-                    entry.target.style.width = '0%';
-                    setTimeout(() => {
-                        entry.target.style.width = width;
-                    }, 100);
-                    techObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        techBars.forEach(bar => techObserver.observe(bar));
-
-        // Work Filters
-        const workFilters = document.querySelectorAll('.work__item');
-        const workCards = document.querySelectorAll('.work__card');
-
-        workFilters.forEach(filter => {
-            filter.addEventListener('click', () => {
-                workFilters.forEach(f => f.classList.remove('active-work'));
-                filter.classList.add('active-work');
-
-                const filterValue = filter.getAttribute('data-filter');
-
-                workCards.forEach(card => {
-                    if (filterValue === 'all' || card.classList.contains(filterValue.substring(1))) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    
-
-
-// PDF Viewer (Diploma / Cover Letter)
-const pdfModal = document.getElementById('pdfModal');
-const pdfFrame = document.getElementById('pdfFrame');
-const pdfClose = document.getElementById('pdfClose');
-const pdfDownload = document.getElementById('pdfDownload');
-const pdfTitle = document.getElementById('pdfModalTitle');
-
-function openPdf({ src, title }) {
-    if (!pdfModal || !pdfFrame) return;
-    pdfFrame.src = src;
-    if (pdfDownload) pdfDownload.href = src;
-
-    // Title localized via data attributes when available
-    const currentLang = document.documentElement.getAttribute('lang') || 'pt-BR';
-    if (pdfTitle) pdfTitle.textContent = title || 'PDF';
-
-    pdfModal.classList.add('is-open');
-    pdfModal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('no-scroll');
-}
-
-function closePdf() {
-    if (!pdfModal || !pdfFrame) return;
-    pdfModal.classList.remove('is-open');
-    pdfModal.setAttribute('aria-hidden', 'true');
-    pdfFrame.src = '';
-    document.body.classList.remove('no-scroll');
-}
-
-document.querySelectorAll('.js-open-pdf').forEach(el => {
-    el.addEventListener('click', (e) => {
-        e.preventDefault();
-        const src = el.getAttribute('data-pdf') || el.getAttribute('href');
-        const lang = document.documentElement.getAttribute('lang') || 'pt-BR';
-        const title =
-            (lang === 'en' && el.getAttribute('data-title-en')) ? el.getAttribute('data-title-en') :
-            (lang === 'es' && el.getAttribute('data-title-es')) ? el.getAttribute('data-title-es') :
-            el.getAttribute('data-title-pt') || el.getAttribute('data-title-en') || el.getAttribute('data-title-es') || 'PDF';
-
-        if (src) openPdf({ src, title });
-    });
-});
-
-pdfClose?.addEventListener('click', closePdf);
-pdfModal?.addEventListener('click', (e) => {
-    if (e.target === pdfModal) closePdf();
-});
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && pdfModal?.classList.contains('is-open')) {
-        closePdf();
-    }
-});
-    </script>
+<!-- ES Module entry point (deferred by default for module scripts) -->
+<script type="module" src="./assets/js/main.js"></script>
 </body>
-
 </html>

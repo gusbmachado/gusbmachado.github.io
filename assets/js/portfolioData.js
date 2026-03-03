@@ -1,10 +1,9 @@
-// Estrutura de dados multilíngue e informações dinâmicas do portfólio
 const portfolioData = {
   pt: {
     langName: "Português",
     hero: {
       title: "Engenheiro de Software | Mobile (Flutter) & Frontend (React/TypeScript)",
-      pitch: "Quase 5 anos criando interfaces complexas para IoT, Streaming de Vídeo e Controle de Hardware.",
+      pitch: "5 anos criando interfaces complexas para IoT, Streaming de Vídeo e Controle de Hardware.",
       academic: "Bacharel em Engenharia da Computação e mestrando em Ciências da Computação (UFU)",
     },
     experience: {
@@ -17,26 +16,7 @@ const portfolioData = {
         { name: "Streaming Vídeo", years: 2, projects: 3 },
       ],
     },
-    caseStudies: [
-      {
-        title: "Case Controller (Mobile & IoT)",
-        desc: "App crítico em Flutter. Eliminação de configuração manual via comandos AT e portas seriais para modems 4G/5G.",
-      },
-      {
-        title: "Comunicação Tática via Rádio (PM)",
-        desc: "Integração com NanoPi, APIs de roteadores e dashboard de telemetria em tempo real.",
-      },
-      {
-        title: "EPG Editor (Web SaaS)",
-        desc: "Arquitetura Serverless, React, operação 100% offline, padrão Globo.",
-      },
-      {
-        title: "Modernização de Legado",
-        desc: "Migração de PHP para SPA moderna (React, TypeScript, Vite, Tailwind CSS).",
-      },
-    ],
     buildingNow: [
-      "PWA Serverless (Firebase) para comunidade (2023)",
       "IPTV (ENTELVIAS)",
       "Cortes de vídeo automatizados via IA (Streamlit)",
       "Sistema inteligente de monitoramento de subestações (SIMAS)",
@@ -73,7 +53,7 @@ const portfolioData = {
     langName: "English",
     hero: {
       title: "Software Engineer | Mobile (Flutter) & Frontend (React/TypeScript)",
-      pitch: "Nearly 5 years building complex interfaces for IoT, Video Streaming, and Hardware Control.",
+      pitch: "5 years building complex interfaces for IoT, Video Streaming, and Hardware Control.",
       academic: "Bachelor in Computer Engineering and MSc student (UFU)",
     },
     experience: {
@@ -86,26 +66,7 @@ const portfolioData = {
         { name: "Video Streaming", years: 2, projects: 3 },
       ],
     },
-    caseStudies: [
-      {
-        title: "Case Controller (Mobile & IoT)",
-        desc: "Critical Flutter app. Eliminated manual setup via AT commands and serial ports for 4G/5G modems.",
-      },
-      {
-        title: "Tactical Radio Communication (PM)",
-        desc: "Integration with NanoPi, router APIs, and real-time telemetry dashboard.",
-      },
-      {
-        title: "EPG Editor (Web SaaS)",
-        desc: "Serverless architecture, React, 100% offline operation, Globo standard.",
-      },
-      {
-        title: "Legacy Modernization",
-        desc: "Migration from PHP to modern SPA (React, TypeScript, Vite, Tailwind CSS).",
-      },
-    ],
     buildingNow: [
-      "Serverless PWA (Firebase) for the community (2023)",
       "IPTV (ENTELVIAS)",
       "Automated video cutting with AI (Streamlit)",
       "Intelligent substation monitoring system (SIMAS)",
@@ -142,7 +103,7 @@ const portfolioData = {
     langName: "Español",
     hero: {
       title: "Ingeniero de Software | Mobile (Flutter) & Frontend (React/TypeScript)",
-      pitch: "Casi 5 años creando interfaces complejas para IoT, Streaming de Video y Control de Hardware.",
+      pitch: "5 años creando interfaces complejas para IoT, Streaming de Video y Control de Hardware.",
       academic: "Licenciado en Ingeniería Informática y estudiante de maestría (UFU)",
     },
     experience: {
@@ -174,7 +135,6 @@ const portfolioData = {
       },
     ],
     buildingNow: [
-      "PWA Serverless (Firebase) para la comunidad (2023)",
       "IPTV (ENTELVIAS)",
       "Cortes de video automatizados con IA (Streamlit)",
       "Sistema inteligente de monitoreo de subestaciones (SIMAS)",

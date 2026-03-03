@@ -1,0 +1,72 @@
+/**
+ * contact.js – Contact form submission via Formspree
+ *
+ * Setup (free – 50 submissions/month):
+ *  1. Sign up at https://formspree.io
+ *  2. Create a new form and copy its ID  (e.g. "xpwzygkb")
+ *  3. Replace the value of FORMSPREE_ID below with your own ID
+ */
+
+import { getData, getLang } from './i18n.js';
+
+const FORMSPREE_ID = 'YOUR_FORM_ID'; // ← replace this
+
+export function initContact() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    const btn  = form.querySelector('[type="submit"]');
+    const feed = document.getElementById('contactFeedback');
+
+    btn.disabled = true;
+    btn.classList.add('loading');
+
+    const payload = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error('server');
+
+      form.reset();
+      setFeedback(feed, t('contact.form_success'), 'ok');
+    } catch {
+      setFeedback(feed, t('contact.form_error'), 'err');
+    } finally {
+      btn.disabled = false;
+      btn.classList.remove('loading');
+    }
+  });
+}
+
+/* ── helpers ───────────────────────────────── */
+
+function t(key) {
+  try {
+    const [ns, k] = key.split('.');
+    return getData()?.i18n?.[getLang()]?.[ns]?.[k] ?? _fallback[key] ?? key;
+  } catch {
+    return _fallback[key] ?? key;
+  }
+}
+
+const _fallback = {
+  'contact.form_success': 'Mensagem enviada! Entrarei em contato em breve. 👋',
+  'contact.form_error':   'Não foi possível enviar. Tente o e-mail diretamente.',
+};
+
+function setFeedback(el, msg, type) {
+  el.textContent = msg;
+  el.className   = `contact__form-feedback contact__form-feedback--${type}`;
+  setTimeout(() => {
+    el.textContent = '';
+    el.className   = 'contact__form-feedback';
+  }, 7000);
+}
