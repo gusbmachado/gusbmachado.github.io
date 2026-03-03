@@ -1,0 +1,480 @@
+{
+  "i18n": {
+    "pt": {
+      "nav": {
+        "home": "Início", "about": "Sobre", "experience": "Exp.",
+        "work": "Projetos", "documents": "Docs", "contact": "Contato"
+      },
+      "hero": {
+        "greeting": "Olá, eu sou",
+        "title": "Engenheiro <span class=\"dim\">Mobile (Flutter) &amp;</span> Frontend",
+        "description": "5 anos criando interfaces de alta complexidade para <strong>IoT</strong>, <strong>Streaming de Vídeo</strong> e controle de hardware. Bacharel em Engenharia da Computação e mestrando em Ciências da Computação (UFU).",
+        "cta_primary": "Download CV",
+        "cta_secondary": "Vamos conversar",
+        "stat_years_label": "Anos de Exp.",
+        "stat_projects_label": "Projetos",
+        "stat_langs_label": "Idiomas"
+      },
+      "about": {
+        "subtitle": "Minha Jornada",
+        "title": "Sobre Mim",
+        "box_exp": "Anos de Experiência",
+        "box_projects": "Projetos Entregues",
+        "box_degree": "Mestrado",
+        "box_degree_sub": "UFU — Ciência da Computação",
+        "box_langs": "Idiomas (PT/EN/ES)",
+        "description": "Atualmente na <strong>ViaSoftware / Viacast</strong>, desenvolvo produtos proprietários de hardware e software para os mercados de <strong>Broadcast</strong> e <strong>Telecomunicações</strong>.<br><br>Minha especialidade é criar aplicações mobile com <strong>Flutter</strong> que se comunicam diretamente com hardware embarcado — desde modems 4G/5G via AT Commands e portas seriais, até dashboards de telemetria em tempo real — e interfaces web robustas com <strong>React / TypeScript</strong>, sempre orientadas a performance e arquiteturas <strong>Offline-First</strong>.<br><br>Sou mestrando em Ciências da Computação (UFU), com pesquisa em Visão Computacional aplicada a automação industrial.",
+        "cta": "Entre em Contato"
+      },
+      "experience": {
+        "subtitle": "Trajetória Profissional",
+        "title": "Experiência"
+      },
+      "work": {
+        "subtitle": "Portfólio",
+        "title": "Projetos em Destaque",
+        "filter_all": "Todos",
+        "building_title": "Construindo Agora",
+        "building_subtitle": "Projetos ativos em desenvolvimento",
+        "view_details": "Ver detalhes",
+        "view_demo": "Ver demo"
+      },
+      "documents": {
+        "subtitle": "Downloads",
+        "title": "Documentos & Certificações",
+        "cv_title": "Currículo",
+        "cv_desc": "Currículo profissional completo com experiência, formação e competências técnicas.",
+        "cover_title": "Carta de Apresentação",
+        "cover_desc": "Carta personalizada destacando motivações e objetivos profissionais.",
+        "transcripts_title": "Histórico Acadêmico",
+        "transcripts_desc": "Histórico completo do Bacharelado em Engenharia da Computação (UFU).",
+        "diploma_title": "Diploma",
+        "diploma_desc": "Diploma de Engenharia da Computação — Universidade Federal de Uberlândia (UFU).",
+        "view": "Ver",
+        "credential": "Ver credencial"
+      },
+      "contact": {
+        "subtitle": "Contato",
+        "title": "Vamos Trabalhar Juntos",
+        "description": "Aberto a remoto, projetos internacionais e consultoria técnica.",
+        "location_label": "Localização",
+        "location_value": "Uberlândia, MG — Brasil 🇧🇷",
+        "comp_subtitle": "Valores de Referência",
+        "comp_hourly_label": "Taxa Horária",
+        "comp_hourly_note": "Projetos freelance & consultoria",
+        "comp_clt_label": "Salário Mensal (CLT)",
+        "comp_clt_note": "Baseado em experiência pleno/sênior",
+        "comp_intl_label": "Remoto Internacional",
+        "comp_intl_note": "USD para clientes internacionais",
+        "flexible_note": "Valores flexíveis conforme escopo, benefícios e modalidade.",
+        "form_name": "Nome",
+        "form_name_ph": "Seu nome completo",
+        "form_email": "E-mail",
+        "form_email_ph": "seu@email.com",
+        "form_subject": "Assunto",
+        "form_subject_ph": "Em que posso ajudar?",
+        "form_message": "Mensagem",
+        "form_message_ph": "Conte sobre seu projeto ou oportunidade...",
+        "form_send": "Enviar Mensagem",
+        "form_success": "Mensagem enviada! Entrarei em contato em breve. 👋",
+        "form_error": "Não foi possível enviar. Tente o e-mail diretamente."
+      },
+      "general": {
+        "download": "Baixar",
+        "close": "Fechar"
+      }
+    },
+    "en": {
+      "nav": {
+        "home": "Home", "about": "About", "experience": "Exp.",
+        "work": "Projects", "documents": "Docs", "contact": "Contact"
+      },
+      "hero": {
+        "greeting": "Hello, I'm",
+        "title": "Mobile <span class=\"dim\">(Flutter) &amp;</span> Frontend Engineer",
+        "description": "5 years building high-complexity interfaces for <strong>IoT</strong>, <strong>Video Streaming</strong>, and hardware control. BSc in Computer Engineering, MSc student in Computer Science (UFU).",
+        "cta_primary": "Download CV",
+        "cta_secondary": "Let's talk",
+        "stat_years_label": "Years Exp.",
+        "stat_projects_label": "Projects",
+        "stat_langs_label": "Languages"
+      },
+      "about": {
+        "subtitle": "My Journey",
+        "title": "About Me",
+        "box_exp": "Years Experience",
+        "box_projects": "Projects Delivered",
+        "box_degree": "MSc",
+        "box_degree_sub": "UFU — Computer Science",
+        "box_langs": "Languages (PT/EN/ES)",
+        "description": "Currently at <strong>ViaSoftware / Viacast</strong>, I build proprietary hardware and software products for the <strong>Broadcast</strong> and <strong>Telecommunications</strong> markets.<br><br>My specialty is Flutter apps that communicate directly with embedded hardware — 4G/5G modems via AT Commands / serial ports, real-time telemetry dashboards — plus robust web interfaces with <strong>React / TypeScript</strong>, always focused on performance and <strong>Offline-First</strong> architectures.<br><br>Currently pursuing a Master's in Computer Science (UFU), researching Computer Vision applied to industrial automation.",
+        "cta": "Get in Touch"
+      },
+      "experience": {
+        "subtitle": "Professional Path",
+        "title": "Experience"
+      },
+      "work": {
+        "subtitle": "Portfolio",
+        "title": "Featured Projects",
+        "filter_all": "All",
+        "building_title": "Currently Building",
+        "building_subtitle": "Active projects under development",
+        "view_details": "View details",
+        "view_demo": "View demo"
+      },
+      "documents": {
+        "subtitle": "Downloads",
+        "title": "Documents & Certifications",
+        "cv_title": "Resume / CV",
+        "cv_desc": "Complete professional resume with experience, education and technical skills.",
+        "cover_title": "Cover Letter",
+        "cover_desc": "Personalized cover letter highlighting motivations and professional goals.",
+        "transcripts_title": "Academic Transcripts",
+        "transcripts_desc": "Complete transcript from Computer Engineering Bachelor (UFU).",
+        "diploma_title": "Diploma",
+        "diploma_desc": "Computer Engineering Diploma — Federal University of Uberlândia (UFU).",
+        "view": "View",
+        "credential": "View credential"
+      },
+      "contact": {
+        "subtitle": "Contact",
+        "title": "Let's Work Together",
+        "description": "Open to remote work, international projects and technical consulting.",
+        "location_label": "Location",
+        "location_value": "Uberlândia, MG — Brazil 🇧🇷",
+        "comp_subtitle": "Reference Rates",
+        "comp_hourly_label": "Hourly Rate",
+        "comp_hourly_note": "Freelance & consulting projects",
+        "comp_clt_label": "Monthly Salary (Full-time)",
+        "comp_clt_note": "Based on mid/senior experience",
+        "comp_intl_label": "International Remote",
+        "comp_intl_note": "USD for international clients",
+        "flexible_note": "Rates flexible depending on scope, benefits and contract type.",
+        "form_name": "Name",
+        "form_name_ph": "Your full name",
+        "form_email": "Email",
+        "form_email_ph": "you@email.com",
+        "form_subject": "Subject",
+        "form_subject_ph": "How can I help?",
+        "form_message": "Message",
+        "form_message_ph": "Tell me about your project or opportunity...",
+        "form_send": "Send Message",
+        "form_success": "Message sent! I'll get back to you soon. 👋",
+        "form_error": "Could not send. Please try the email address directly."
+      },
+      "general": {
+        "download": "Download",
+        "close": "Close"
+      }
+    },
+    "es": {
+      "nav": {
+        "home": "Inicio", "about": "Sobre", "experience": "Exp.",
+        "work": "Proyectos", "documents": "Docs", "contact": "Contacto"
+      },
+      "hero": {
+        "greeting": "Hola, soy",
+        "title": "Ingeniero <span class=\"dim\">Mobile (Flutter) &amp;</span> Frontend",
+        "description": "5 años creando interfaces de alta complejidad para <strong>IoT</strong>, <strong>Streaming de Video</strong> y control de hardware. Licenciado en Ingeniería Informática y estudiante de maestría (UFU).",
+        "cta_primary": "Descargar CV",
+        "cta_secondary": "Hablemos",
+        "stat_years_label": "Años Exp.",
+        "stat_projects_label": "Proyectos",
+        "stat_langs_label": "Idiomas"
+      },
+      "about": {
+        "subtitle": "Mi Trayectoria",
+        "title": "Sobre Mí",
+        "box_exp": "Años de Experiencia",
+        "box_projects": "Proyectos Entregados",
+        "box_degree": "Máster",
+        "box_degree_sub": "UFU — Ciencias de la Computación",
+        "box_langs": "Idiomas (PT/EN/ES)",
+        "description": "Actualmente en <strong>ViaSoftware / Viacast</strong>, desarrollo productos propietarios de hardware y software para los mercados de <strong>Broadcast</strong> y <strong>Telecomunicaciones</strong>.<br><br>Mi especialidad: apps Flutter que se comunican con hardware embebido — módems 4G/5G vía AT Commands, dashboards de telemetría en tiempo real — e interfaces web robustas con <strong>React / TypeScript</strong>, orientadas a rendimiento y arquitecturas <strong>Offline-First</strong>.",
+        "cta": "Contáctame"
+      },
+      "experience": {
+        "subtitle": "Trayectoria Profesional",
+        "title": "Experiencia"
+      },
+      "work": {
+        "subtitle": "Portafolio",
+        "title": "Proyectos Destacados",
+        "filter_all": "Todos",
+        "building_title": "Construyendo Ahora",
+        "building_subtitle": "Proyectos activos en desarrollo",
+        "view_details": "Ver detalles",
+        "view_demo": "Ver demo"
+      },
+      "documents": {
+        "subtitle": "Descargas",
+        "title": "Documentos & Certificaciones",
+        "cv_title": "Currículum",
+        "cv_desc": "Currículum profesional completo con experiencia, formación y competencias técnicas.",
+        "cover_title": "Carta de Presentación",
+        "cover_desc": "Carta personalizada destacando motivaciones y objetivos profesionales.",
+        "transcripts_title": "Historial Académico",
+        "transcripts_desc": "Historial completo de Licenciatura en Ingeniería Informática (UFU).",
+        "diploma_title": "Diploma",
+        "diploma_desc": "Diploma de Ingeniería Informática — Universidad Federal de Uberlândia (UFU).",
+        "view": "Ver",
+        "credential": "Ver credencial"
+      },
+      "contact": {
+        "subtitle": "Contacto",
+        "title": "Trabajemos Juntos",
+        "description": "Abierto a trabajo remoto, proyectos internacionales y consultoría técnica.",
+        "location_label": "Ubicación",
+        "location_value": "Uberlândia, MG — Brasil 🇧🇷",
+        "comp_subtitle": "Valores de Referencia",
+        "comp_hourly_label": "Tarifa por Hora",
+        "comp_hourly_note": "Proyectos freelance & consultoría",
+        "comp_clt_label": "Salario Mensual",
+        "comp_clt_note": "Basado en experiencia semi-senior/senior",
+        "comp_intl_label": "Remoto Internacional",
+        "comp_intl_note": "USD para clientes internacionales",
+        "flexible_note": "Valores negociables según alcance, beneficios y modalidad.",
+        "form_name": "Nombre",
+        "form_name_ph": "Tu nombre completo",
+        "form_email": "Correo electrónico",
+        "form_email_ph": "tu@correo.com",
+        "form_subject": "Asunto",
+        "form_subject_ph": "¿En qué puedo ayudarte?",
+        "form_message": "Mensaje",
+        "form_message_ph": "Cuéntame sobre tu proyecto u oportunidad...",
+        "form_send": "Enviar Mensaje",
+        "form_success": "¡Mensaje enviado! Me pondré en contacto pronto. 👋",
+        "form_error": "No se pudo enviar. Intenta el correo directamente."
+      },
+      "general": {
+        "download": "Descargar",
+        "close": "Cerrar"
+      }
+    }
+  },
+
+  "timeline": [
+    {
+      "period": {
+        "pt": "Jan 2021 – Presente · 4+ anos",
+        "en": "Jan 2021 – Present · 4+ years",
+        "es": "Ene 2021 – Presente · 4+ años"
+      },
+      "role": {
+        "pt": "Engenheiro de Software Pleno",
+        "en": "Mid-level Software Engineer",
+        "es": "Ingeniero de Software Semi-Senior"
+      },
+      "company": "ViaSoftware / Viacast — Uberlândia, MG · Remoto Híbrido",
+      "description": {
+        "pt": "Desenvolvimento full-cycle de produtos de hardware e software para Broadcast e Telecom. Liderança técnica no <strong>Vlink Controller</strong> (Flutter + IoT), <strong>EPG Editor</strong> (React SaaS Offline-First) e modernização de múltiplos sistemas legados PHP para SPAs com React/Vite/Tailwind.",
+        "en": "Full-cycle development of hardware and software products for Broadcast and Telecom. Led <strong>Vlink Controller</strong> (Flutter + IoT), <strong>EPG Editor</strong> (React SaaS Offline-First) and modernized legacy PHP systems to SPAs using React / Vite / Tailwind.",
+        "es": "Desarrollo full-cycle de productos hardware/software para Broadcast y Telecom. Lideré <strong>Vlink Controller</strong> (Flutter + IoT), <strong>EPG Editor</strong> (React SaaS Offline-First) y modernización de sistemas PHP legacy a SPAs con React / Vite / Tailwind."
+      },
+      "tags": ["Flutter", "React", "TypeScript", "IoT", "HLS", "Node.js", "Firebase", "Docker"]
+    },
+    {
+      "period": {
+        "pt": "2021 – Presente · Paralelo",
+        "en": "2021 – Present · Parallel",
+        "es": "2021 – Presente · Paralelo"
+      },
+      "role": {
+        "pt": "Freelancer & Pesquisador (Mestrado)",
+        "en": "Freelancer & Researcher (MSc)",
+        "es": "Freelancer & Investigador (Máster)"
+      },
+      "company": "UFU — Uberlândia, MG",
+      "description": {
+        "pt": "Projetos independentes: PWA Serverless para comunidade, sistema IPTV (ENTELVIAS), cortes automatizados de vídeo via IA (Streamlit/PyTorch) e SIMAS (monitoramento inteligente de subestações).",
+        "en": "Independent projects: community Serverless PWA, IPTV system (ENTELVIAS), automated AI-powered video cutting (Streamlit/PyTorch) and SIMAS (intelligent substation monitoring).",
+        "es": "Proyectos independientes: PWA Serverless para comunidad, sistema IPTV (ENTELVIAS), corte automatizado de videos con IA (Streamlit/PyTorch) y SIMAS (monitoreo inteligente de subestaciones)."
+      },
+      "tags": ["Python", "PyTorch", "Streamlit", "Firebase", "OpenCV"]
+    },
+    {
+      "period": {
+        "pt": "2018 – 2024 · Graduação + Mestrado",
+        "en": "2018 – 2024 · Undergrad + MSc",
+        "es": "2018 – 2024 · Grado + Máster"
+      },
+      "role": {
+        "pt": "Engenharia da Computação (Bach.) + Mestrado em Ciências da Computação",
+        "en": "Computer Engineering (BSc) + MSc in Computer Science",
+        "es": "Ingeniería Informática (Grado) + Máster en CS"
+      },
+      "company": "Universidade Federal de Uberlândia — UFU",
+      "description": { "pt": "", "en": "", "es": "" },
+      "tags": ["Visão Computacional", "AWS Academy", "Mathematics for ML"]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "vlink",
+      "category": ["mobile", "iot"],
+      "img": "./assets/img/projeto-1.png",
+      "link": "#",
+      "title": { "pt": "Vlink Controller", "en": "Vlink Controller", "es": "Vlink Controller" },
+      "tech": "Flutter · IoT · AT Commands · 4G/5G",
+      "description": {
+        "pt": "Liderança técnica em app crítico para configuração de modems 4G/5G. Eliminação de configuração manual via AT Commands e integração com hardware embarcado.",
+        "en": "Technical lead on a critical 4G/5G modem management app. Eliminated manual setup via AT Commands and embedded hardware integration.",
+        "es": "Liderazgo técnico en app crítica para configuración de módems 4G/5G vía comandos AT e integración con hardware embebido."
+      }
+    },
+    {
+      "id": "epg",
+      "category": ["web"],
+      "img": "./assets/img/projeto-2.png",
+      "link": "https://viacast.tv/epg/",
+      "title": { "pt": "EPG Editor (SaaS)", "en": "EPG Editor (SaaS)", "es": "EPG Editor (SaaS)" },
+      "tech": "React · TypeScript · Serverless · Offline-First",
+      "description": {
+        "pt": "Interface SaaS para emissoras de TV no padrão Globo. Arquitetura Serverless com operação 100% offline e alta performance.",
+        "en": "SaaS interface for TV broadcasters (Globo Standard). Serverless architecture with 100% offline operation and high performance.",
+        "es": "Interfaz SaaS para emisoras de TV (estándar Globo). Arquitectura Serverless con operación 100% offline y alta performance."
+      }
+    },
+    {
+      "id": "broadcast-spa",
+      "category": ["web"],
+      "img": "./assets/img/projeto-3.gif",
+      "link": "#",
+      "title": {
+        "pt": "Modernização de Sistemas Broadcast",
+        "en": "Broadcast Systems Modernization",
+        "es": "Modernización de Sistemas Broadcast"
+      },
+      "tech": "React · Vite · Tailwind CSS · TypeScript",
+      "description": {
+        "pt": "Refatoração completa de interfaces legadas (PHP) para SPAs modernas, otimizando controle de encoders e decoders de vídeo.",
+        "en": "Full refactor of legacy PHP interfaces into modern SPAs, optimizing video encoder and decoder control systems.",
+        "es": "Refactorización completa de interfaces PHP legacy a SPAs modernas, optimizando el control de encoders y decoders de video."
+      }
+    },
+    {
+      "id": "radio-tactical",
+      "category": ["mobile", "iot"],
+      "img": "./assets/img/projeto-4.png",
+      "link": "#",
+      "title": {
+        "pt": "Comunicação Tática via Rádio",
+        "en": "Tactical Radio Communication",
+        "es": "Comunicación Táctica por Radio"
+      },
+      "tech": "Flutter · NanoPi · WebSocket · Telemetria",
+      "description": {
+        "pt": "App para controle de codificação em áreas remotas. Dashboard de telemetria em tempo real e integração com APIs de roteadores.",
+        "en": "App for encoding control in remote areas. Real-time telemetry dashboard and router API integration.",
+        "es": "App para control de codificación en áreas remotas. Dashboard de telemetría en tiempo real e integración con APIs de routers."
+      }
+    },
+    {
+      "id": "gpi",
+      "category": ["iot"],
+      "img": "./assets/img/projeto-5.png",
+      "link": "#",
+      "title": { "pt": "Playcast GPI", "en": "Playcast GPI", "es": "Playcast GPI" },
+      "tech": "Node.js · Hardware · Automation · Broadcast",
+      "description": {
+        "pt": "Automação de playout integrada ao hardware para sincronização de transmissões críticas em estúdios de televisão.",
+        "en": "Playout automation integrated with hardware for critical broadcast synchronization in TV studios.",
+        "es": "Automatización de playout integrada con hardware para sincronización crítica de transmisiones en estudios de TV."
+      }
+    },
+    {
+      "id": "pwa",
+      "category": ["web"],
+      "img": "./assets/img/projeto-6.png",
+      "link": "#",
+      "title": {
+        "pt": "PWA Comunitário (Serverless)",
+        "en": "Community PWA (Serverless)",
+        "es": "PWA Comunitario (Serverless)"
+      },
+      "tech": "React · TypeScript · Firebase · Offline-First",
+      "description": {
+        "pt": "Progressive Web App com arquitetura Serverless (Firestore/Auth) para alta escalabilidade e baixo custo operacional.",
+        "en": "Progressive Web App with Serverless architecture (Firestore/Auth) for high scalability and low operating costs.",
+        "es": "Progressive Web App con arquitectura Serverless (Firestore/Auth) para alta escalabilidad y bajo costo operativo."
+      }
+    }
+  ],
+
+  "buildingNow": [
+    {
+      "title": { "pt": "IPTV (ENTELVIAS)", "en": "IPTV (ENTELVIAS)", "es": "IPTV (ENTELVIAS)" },
+      "subtitle": { "pt": "Streaming & TV", "en": "Streaming & TV", "es": "Streaming & TV" }
+    },
+    {
+      "title": {
+        "pt": "Cortes de vídeo via IA (Streamlit)",
+        "en": "AI-powered video cutting (Streamlit)",
+        "es": "Cortes de video con IA (Streamlit)"
+      },
+      "subtitle": { "pt": "IA & Automação", "en": "AI & Automation", "es": "IA & Automatización" }
+    },
+    {
+      "title": {
+        "pt": "SIMAS – Monitoramento de Subestações",
+        "en": "SIMAS – Substation Monitoring",
+        "es": "SIMAS – Monitoreo de Subestaciones"
+      },
+      "subtitle": { "pt": "IoT & Python", "en": "IoT & Python", "es": "IoT & Python" }
+    }
+  ],
+
+  "documents": {
+    "cv": {
+      "files": [
+        { "lang_label": "PT", "href": "./assets/pdf/gustavo-b-machado.pdf" },
+        { "lang_label": "EN", "href": "./assets/pdf/gustavo-b-machado-en.pdf" },
+        { "lang_label": "ES", "href": "./assets/pdf/gustavo-b-machado-es.pdf" }
+      ]
+    },
+    "cover": {
+      "view_href": "./assets/pdf/cover-letter.pdf",
+      "files": [
+        { "lang_label": "PT", "href": "./assets/pdf/cover-letter.pdf" },
+        { "lang_label": "EN", "href": "./assets/pdf/cover-letter-en.pdf" },
+        { "lang_label": "ES", "href": "./assets/pdf/cover-letter-es.pdf" }
+      ]
+    },
+    "transcripts": {
+      "files": [{ "lang_label": "PDF", "href": "./assets/pdf/transcripts.pdf" }]
+    },
+    "diploma": {
+      "view_href": "./assets/pdf/diploma.pdf",
+      "files": [{ "lang_label": "PDF", "href": "./assets/pdf/diploma.pdf" }]
+    }
+  },
+
+  "certifications": [
+    {
+      "title": "AWS Academy Cloud Foundations",
+      "issuer": "Amazon Web Services",
+      "credential_url": "https://www.credly.com/badges/d7e4ae30-8ce7-413c-a622-2dff88988a41?source=linked_in_profile"
+    },
+    {
+      "title": "Mathematics for Machine Learning",
+      "issuer": "Imperial College London",
+      "credential_url": "https://www.coursera.org/account/accomplishments/verify/9Q8JYPEDZQQ6"
+    }
+  ],
+
+  "contact": {
+    "email": "gustavobmachado105@gmail.com",
+    "whatsapp": "https://wa.me/5534991958314",
+    "whatsapp_display": "+55 (34) 99195-8314",
+    "linkedin": "https://www.linkedin.com/in/gustavo-machado-40a250186",
+    "github": "https://github.com/gusbmachado"
+  },
+
+  "compensation": {
+    "hourly_brl": "R$ 40/h",
+    "monthly_clt": "R$ 5k–7k",
+    "international_usd": "US$ 15/h"
+  }
+}
