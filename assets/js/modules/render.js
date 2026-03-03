@@ -1,6 +1,5 @@
 /**
  * render.js – Dynamic section rendering from portfolio.json data
- * Reads from the parsed data object (not from DOM / portfolioData global)
  */
 
 import { getLang, onLangChange } from './i18n.js';
